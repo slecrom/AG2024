@@ -1,46 +1,22 @@
-# Welcome to MkDocs
+# TP2 - Génétique de l’épigénétique chez la drosophile : des ARN (petits et grands) pour la défense de l’intégrité du génome
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+**Contenu du site**
 
-Test 5
+1. [Traitement des données des petits ARN](./srna.md)
+2. [Traitement des données de RNA-seq](./rnaseq.md)
+3. [Visualisation des résultats obtenus](./igv.md)
+4. [Annexes](./annexes.md)
 
-## Commands
+Pour réaliser ces analyses nous allons utiliser l’outil Galaxy. Il s’agit d’une plateforme basée sur un système de serveur Web ouvert sur lequel vous pouvez effectuer en ligne un certain nombre de traitements sur vos données. Le projet Galaxy dispose d’un [site principal](https://usegalaxy.org/).
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+Vous pouvez également trouver d’autres miroirs du site principal de Galaxy adapté à diverses communautés, chacune ayant choisi d’ajouter au sein du système ces propres modules. Une [liste des principaux miroirs et de leurs communautés](https://galaxyproject.org/use/) est disponible en ligne.
 
-## Project layout
+!!! danger "Attention"
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+	Dans Galaxy un peu de discipline s’impose. Si le système assure un suivi complet de tout ce que vous faites grâce à des numéros d’identification uniques de toutes les données produites, cela peut devenir compliqué à suivre si vous relancez certaines étapes plusieurs fois.
+	Nous vous encourageons à changer le nom de vos attributs pour leur donner un nom explicite (mais de préférence court) en cliquant sur le bouton en forme de crayon "Edit attributes", en modifiant le champs "Name" et en cliquant sur "Save".
 
-!!! note
-    On a few known hosts (specifically GitHub, Bitbucket and GitLab), the
-    `edit_uri` is derived from the 'repo_url' and does not need to be set
-    manually. Simply defining a `repo_url` will automatically populate the
-    `edit_uri` configs setting.
+Pour rappel voici le schéma des croisements utilisés pendant le TP :
 
-    For example, for a GitHub- or GitLab-hosted repository, the `edit_uri`
-    would be automatically set as `edit/master/docs/` (Note the `edit` path
-    and `master` branch).
+![Croisements](img/croisements.png "Croisements")
 
-    For a Bitbucket-hosted repository, the equivalent `edit_uri` would be
-    automatically set as `src/default/docs/` (note the `src` path and `default`
-    branch).
-
-    To use a different URI than the default (for example a different branch),
-    simply set the `edit_uri` to your desired string. If you do not want any
-    "edit URL link" displayed on your pages, then set `edit_uri` to an empty
-    string to disable the automatic setting.
-
-!!! warning
-    On GitHub and GitLab, the default "edit" path (`edit/master/docs/`) opens
-    the page in the online editor. This functionality requires that the user
-    have and be logged in to a GitHub/GitLab account. Otherwise, the user will
-    be redirected to a login/signup page. Alternatively, use the "blob" path
-    (`blob/master/docs/`) to open a read-only view, which supports anonymous
-    access.

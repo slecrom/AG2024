@@ -1,5 +1,10 @@
-site_name: MkLorum
+site_name: Analyse des génomes 2021
 nav:
-    - Home: index.md
-    - About: about.md
+    - Accueil: index.md
+    - 1. Petits ARN: srna.md
+    - 2. RNAseq: rnaseq.md
+    - 3. IGV: igv.md
+    - 4. Annexes: annexes.md
 theme: readthedocs
+markdown_extensions:
+    - admonition
