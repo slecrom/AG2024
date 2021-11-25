@@ -12,11 +12,17 @@
 
 	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. Elles ne sont en aucun cas la base de l’évaluation de votre travail.
 
+Commencer par créer un nouvel historique et donnez lui un nom court et explicite comme "RNA analyses"
+
+Copier les données des échantillons WT (1,2 et 3) et SF (1, 2 et 3). Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
+
+Ensuite [créez deux collections avec ce jeu de données (dataset) une pour WT et une pour SF](https://artbio.github.io/startbio/Run-Galaxy/Loading_data_in_galaxy/#a-making-a-collection-of-the-small-rna-sequence-datasets) mais sans cacher les données d'origines.
+
 
 --------------------------------------------------------------------------------
 ## Contrôle qualité des lectures
 
-Comme dans la partie sur les [petits ARN](./srna.md), regardez les résultats du contrôle de qualité effectué par FastQC sur votre fichier fastq.
+Comme dans la partie sur les [petits ARN](./srna.md), regardez les résultats du contrôle de qualité effectué par FastQC sur les fichiers fastq pour les 2 collections.
 
 !!! hint "Questions"
 
@@ -97,6 +103,8 @@ Le décompte des alignements va se faire sur le fichier BAM filtré et trié que
 ## Analyse différentielle
 
 Vous allez maintenant comparer les niveaux d’expression des gènes entre vos 2 conditions à l’aide des 3 réplicats de chaque condition. Pour cela vous devez d’abord récupérer les fichiers de comptage des autres échantillons qu’il vous manque.
+
+Reportez vous aux [annexes](./annexes.md) pour savoir comment partager des données entre serveurs Galaxy.
 
 Ensuite vous allez utiliser l’outil ***DESeq2*** pour effectuer l’analyse différentielle. Il se base sur le [package R DESeq2](http://bioconductor.org/packages/release/bioc/html/DESeq2.html).
 

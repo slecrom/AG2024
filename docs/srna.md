@@ -7,8 +7,14 @@
 !!! hint ""
 
 	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. Elles ne sont en aucun cas la base de l’évaluation de votre travail.
-	
-	
+
+Commencer par créer un nouvel historique et donnez lui un nom court et explicite comme "small RNA analyses"
+
+Copier les données GRH-103 et GRH-105. Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
+
+Ensuite [créez une collection avec ce jeu de données (dataset)](https://artbio.github.io/startbio/Run-Galaxy/Loading_data_in_galaxy/#a-making-a-collection-of-the-small-rna-sequence-datasets) mais sans cacher les données d'origines.
+
+
 --------------------------------------------------------------------------------
 ## Contrôle qualité des lectures
 
@@ -60,14 +66,16 @@ Pour ce TP vous allez utiliser la version 6.18 du génome de *Drosophila melanog
 
 Dans la liste des éléments disponibles vous aller récupérer les fichiers de séquences des :
 
-* Gènes : genes ;
-* Introns : introns ;
-* miRNA : miRNA ;
-* ARN non codants : ncRNA ;
-* piRNA clusters connus (142) : piRNA_clusters ;
-* Transposons : all-transposons ;
-* ARN divers qui contiennent les séquences des ribosomes et des snoRNA : miscRNA ;
-* Et le génome de la drosophile : dmel-all-chromosome-r6.18.
+- Gènes : genes
+- Introns : introns
+- miRNA : miRNA
+- ARN non codants : ncRNA
+- piRNA clusters connus (142) : piRNA_clusters
+- Transposons : all-transposons
+- ARN divers qui contiennent les séquences des ribosomes et des snoRNA : miscRNA
+- ARN de transferts : tRNA
+- Transcrits : transcrits
+- Et le génome de la drosophile : dmel-all-chromosome-r6.18
 
 Comme pour cette étape l’objectif est d’obtenir rapidement les fichiers d’alignements on va se concentrer sur la récupération des meilleurs alignements possibles. En vous aidant de la [documentation du logiciel bowtie](http://bowtie-bio.sourceforge.net/manual.shtml), répondez aux questions ci-dessous.
 
@@ -79,7 +87,7 @@ Comme pour cette étape l’objectif est d’obtenir rapidement les fichiers d�
 
 Nous allons utiliser l’outil ***sR_bowtie*** sur les données clippées en alignant les lectures sur un fichier d’éléments du génome de la drosophile obtenu précédemment.
 
-Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
+Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques des fichiers fasta de référence dont vous avez besoin.
 
 ![Annotation](img/srna/annotation.png "Annotation")
 
@@ -108,7 +116,7 @@ La sortie standard et l’erreur standard sont accessibles dans Galaxy. Pour cel
 
 Pour aller plus loin dans l’analyse des loci producteurs de piRNA, vous allez aligner spécifiquement les séquences que vous avez obtenues sur des régions génomiques d’intérêt. La première d’entre elle est celle du transgène **P{lacW}**.
 
-Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
+Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques pour récupérer la séquence fasta de P{lacW}.
 
 Nous allons utiliser l’outil ***sR_bowtie*** sur les données clippées en alignant les lectures sur le fichier que l’on vient de télécharger. On cherche maintenant à obtenir des alignements uniques sans ambiguïtés.
 
