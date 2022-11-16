@@ -38,7 +38,7 @@ Pour les afficher il faut les autoriser spécifiquement :
 
 1. Aller dans le menu "Admin"
 2. Puis "Tool Management" et choisir "Gérer la liste autorisée d'outils graphiques"
-3. Rechercher "FastQC" dans la liste, cliquer sur la case puis tout en bas de la liste sur "Submit new allowlist"
+3. Rechercher "FastQC" dans la liste, cliquer sur n'importe quelle case de la ligne. Elle va disparaître et s'afficher dans l'onglet "HTML Rendered"
 
 ![Whitelist](img/annexes/whitelist.png "Autoriser l'affichage HTML")
 

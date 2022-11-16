@@ -2,7 +2,7 @@
 
 !!! danger "Compte rendu des résultats"
 
-	Nous vous demandons de nous envoyer par courrier électronique à la fin de la journée le cahier de manipulation électronique (fichier texte) dans lequel sont décrites les étapes que vous avez effectuées. L’objectif est que la personne qui va relire ce document soit capable de reproduire ce que vous avez fait et obtenir les mêmes résultats que vous.
+	Je vous demande de m'envoyer en message direct dans Slack à la fin de la scéance le cahier de manipulation électronique (fichier texte) dans lequel sont décrites les étapes que vous avez effectuées. L’objectif est que la personne qui va relire ce document soit capable de reproduire ce que vous avez fait et obtenir les mêmes résultats que vous.
 
 !!! attention "Objectif"
 
@@ -12,21 +12,17 @@
 
 	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. Elles ne sont en aucun cas la base de l’évaluation de votre travail.
 
-Commencer par créer un nouvel historique et donnez lui un nom court et explicite comme "RNA analyses"
-
-Copier les données des échantillons WT (1,2 et 3) et SF (1, 2 et 3). Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
-
-Ensuite [créez deux collections avec ce jeu de données (dataset) une pour WT et une pour SF](https://artbio.github.io/startbio/Run-Galaxy/Loading_data_in_galaxy/#a-making-a-collection-of-the-small-rna-sequence-datasets) mais sans cacher les données d'origines.
+Vous allez partir de l'historique que vous avez créé mardi où se trouve la collection des données de séquençage des ARN WT et SF ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2022/Loading_data_in_galaxy/#5-dataset-collections)).
 
 
 --------------------------------------------------------------------------------
 ## Contrôle qualité des lectures
 
-Comme dans la partie sur les [petits ARN](./srna.md), regardez les résultats du contrôle de qualité effectué par FastQC sur les fichiers fastq pour les 2 collections.
+Comme dans la partie sur les [petits ARN](./srna.md#controle-qualite-des-lectures), regardez les résultats du contrôle de qualité effectué par FastQC sur les fichiers fastq pour les 2 collections.
 
 !!! hint "Questions"
 
-	- Combien de lectures avez-vous dans votre fichier ?
+	- Combien de lectures avez-vous dans vos fichiers ?
 	- Quelle est la version du format fastq utilisée ?
 	- Les lectures sont-elles de bonne qualité pour poursuivre vos analyses ?
 	- Pouvez-vous observer des biais particuliers à prendre en compte pour la suite ?

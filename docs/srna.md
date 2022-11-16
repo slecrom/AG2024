@@ -2,17 +2,15 @@
 
 !!! attention "Objectif"
 
-	Le but de cette séance de Travaux Pratiques est d’effectuer le traitement des données du séquençage des petits ARN. À la fin de la séance vous devez pouvoir comparer les profils d’expression des petits ARN dans les différentes conditions d’étude.
+	Le but de cette séance de Travaux Pratiques est d’effectuer le traitement des données du séquençage des petits ARN.
+	
+	À la fin de la séance vous devez pouvoir comparer les profils d’expression des petits ARN dans les différentes conditions d’étude.
 
 !!! hint ""
 
 	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. Elles ne sont en aucun cas la base de l’évaluation de votre travail.
 
-Commencer par créer un nouvel historique et donnez lui un nom court et explicite comme "small RNA analyses"
-
-Copier les données GRH-103 et GRH-105. Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
-
-Ensuite [créez une collection avec ce jeu de données (dataset)](https://artbio.github.io/startbio/Run-Galaxy/Loading_data_in_galaxy/#a-making-a-collection-of-the-small-rna-sequence-datasets) mais sans cacher les données d'origines.
+Vous allez partir de l'historique que vous avez créé hier où se trouve la collection des données de séquençage des petits ARN GRH-103 et GRH-105 ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2022/Loading_data_in_galaxy/#5-dataset-collections)).
 
 
 --------------------------------------------------------------------------------
@@ -22,16 +20,20 @@ Ensuite [créez une collection avec ce jeu de données (dataset)](https://artbio
 
 	Pour afficher plusieurs graphiques permettant d’évaluer de façon automatique la qualité des lectures obtenues, nous allons utiliser le logiciel **FastQC**. Il est disponible sur les principaux systèmes d’exploitation actuels (Windows, MacOS et Linux) et peut-être utilisé avec une interface graphique ou bien en ligne de commande. Vous pouvez télécharger l'outil et consulter son mode d’emploi [sur son site internet](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
 
-Dans Galaxy vous allez utiliser l’outil ***FastQC Read Quality reports***
+Dans Galaxy vous allez utiliser l’outil ***FastQC Read Quality reports***. Pensez à cliquer sur l'icône en forme de dossier pour accéder à votre collection.
+
+Cliquer sur "Execute" sans modifier les paramètres.
 
 ![FastQC](img/srna/qc.png "FastQC")
+
+Si aucune image ne s'affiche, rendez-vous dans les [annexes](./annexes.md#resoudre-les-problemes-daffichage-html-dans-galaxy) pour résoudre ce problème.
 
 En vous aidant de la notice d’utilisation du logiciel, regardez les résultats du contrôle de qualité effectué par FastQC sur votre fichier fastq.
 
 !!! hint "Questions"
 
-	- Combien de lectures avez-vous dans votre fichier ?
-	- Quelle est la version du format fastq utilisée (voir wikipedia) ?
+	- Combien de lectures avez-vous dans vos fichiers ?
+	- Quelle est la version du format fastq utilisée (voir [wikipedia](https://en.wikipedia.org/wiki/FASTQ_format)) ?
 	- Les lectures sont-elles de bonne qualité pour poursuivre l’analyse ?
 	- Pouvez-vous observer des biais particuliers à prendre en compte pour la suite ?
 
@@ -43,7 +45,7 @@ Les séquences obtenues sont plus longues que celles des petits ARN que l’on v
 
 On va également profiter de cette étape pour ne conserver que les séquences de tailles comprises entre 18 et 30, celles correspondants aux petits ARN que nous voulons étudier.
 
-Vous allez pour cela utiliser l’outil ***Clip adapter***.
+Vous allez pour cela utiliser l’outil ***Clip adapter***. Les réglages à modifier sont entourés en rouge.
 
 ![Clipping des adaptateurs](img/srna/clipping.png "Clipping des adaptateurs")
 
@@ -51,10 +53,15 @@ Sur les fichiers fastq obtenus en sortie de cette étape de clipping, relancez u
 
 !!! hint "Questions"
 
-	- Combien de lectures avez-vous conservé dans votre fichier ?
+	- Combien de lectures avez-vous conservé dans vos fichiers ?
 	- Quel pourcentage des séquences de départ cela représente-t-il ?
 	- L’étape de clipping a-t-elle bien réalisé ce que vous souhaitiez ?
 	- Que pensez-vous de la distribution de taille des séquences ?
+
+
+Vous avez la possibilité de renommer les collections en cliquant sur l'une d'entre elle et dans le nouvelle colonne qui s'ouvre à droite sur le crayon.
+
+![Renommer une collection](img/srna/rename_collection.png "Renommer une collection")
 
 
 --------------------------------------------------------------------------------
@@ -64,18 +71,18 @@ L’objectif de cette étape est d’annoter les éléments génomiques dans les
 
 Pour ce TP vous allez utiliser la version 6.18 du génome de *Drosophila melanogaster* dont les fichiers de séquence au format fasta sont accessibles sur le [site FTP de Flybase](http://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.18_FB2017_05/fasta/)
 
-Dans la liste des éléments disponibles vous aller récupérer les fichiers de séquences des :
+Dans la liste des éléments disponibles nous allons utiliser les fichiers de séquences des :
 
 - Gènes : genes
 - Introns : introns
 - miRNA : miRNA
 - ARN non codants : ncRNA
 - piRNA clusters connus (142) : piRNA_clusters
-- Transposons : all-transposons
+- Transposons : transposons
 - ARN divers qui contiennent les séquences des ribosomes et des snoRNA : miscRNA
 - ARN de transferts : tRNA
 - Transcrits : transcrits
-- Et le génome de la drosophile : dmel-all-chromosome-r6.18
+- Et le génome de la drosophile : dmel-MAIN-chromosome-r6.18
 
 Comme pour cette étape l’objectif est d’obtenir rapidement les fichiers d’alignements on va se concentrer sur la récupération des meilleurs alignements possibles. En vous aidant de la [documentation du logiciel bowtie](http://bowtie-bio.sourceforge.net/manual.shtml), répondez aux questions ci-dessous.
 
@@ -87,7 +94,7 @@ Comme pour cette étape l’objectif est d’obtenir rapidement les fichiers d�
 
 Nous allons utiliser l’outil ***sR_bowtie*** sur les données clippées en alignant les lectures sur un fichier d’éléments du génome de la drosophile obtenu précédemment.
 
-Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques des fichiers fasta de référence dont vous avez besoin.
+Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-historiques) pour savoir comment copier les données entre historiques des fichiers fasta de référence dont vous avez besoin.
 
 ![Annotation](img/srna/annotation.png "Annotation")
 
@@ -97,7 +104,7 @@ Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les donnée
 	- Combien de lectures n’ont pas été alignées ?
 	- Combien d’alignements ont été filtrés avec les options que vous avez choisies ?
 
-Pour chacun des éléments d’annotation (sans oublier le génome complet de la drosophile) reportez dans un tableau le nombre et le pourcentage de lectures obtenu après chaque alignement.
+Pour chacun des éléments d’annotation (sans oublier le génome complet de la drosophile) reportez dans le [tableau Google Sheet](https://docs.google.com/spreadsheets/d/1Cxe_UCjYfFXXRGcaMgyTm_m6uJrKGDy_UYKGS4K-EZM/) le nombre lectures obtenues après chaque alignement.
 
 Comme vous êtes plusieurs à travailler sur les mêmes fichiers, répartissez-vous le travail.
 
@@ -116,7 +123,7 @@ La sortie standard et l’erreur standard sont accessibles dans Galaxy. Pour cel
 
 Pour aller plus loin dans l’analyse des loci producteurs de piRNA, vous allez aligner spécifiquement les séquences que vous avez obtenues sur des régions génomiques d’intérêt. La première d’entre elle est celle du transgène **P{lacW}**.
 
-Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques pour récupérer la séquence fasta de P{lacW}.
+Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-historiques) pour savoir comment copier les données entre historiques pour récupérer la séquence fasta de P{lacW}.
 
 Nous allons utiliser l’outil ***sR_bowtie*** sur les données clippées en alignant les lectures sur le fichier que l’on vient de télécharger. On cherche maintenant à obtenir des alignements uniques sans ambiguïtés.
 
