@@ -33,15 +33,35 @@ Comme dans la partie sur les [petits ARN](./srna.md#controle-qualite-des-lecture
 
 Vous allez utiliser bowtie pour réaliser l’alignement des lectures obtenues sur le génome de la drosophile mais le but ici est d’obtenir plus de lectures qui s’alignent car les fragments sont plus longs que pour les petits ARN.
 
+[Documentation du logiciel bowtie](http://bowtie-bio.sourceforge.net/manual.shtml)
+
 !!! hint "Question"
 
-	- Quels sont les paramètres et les options que vous allez choisir ?
+	- Quels sont les paramètres et les options que vous choisiriez ?
 
-Une fois que vous avez déterminé les options à utiliser dans votre ligne de commande, lancez l’alignement de votre fichier fastq. Nous allons utiliser l’outil ***Map with Bowtie for Illumina*** sur les données brutes en alignant les lectures sur le génome de référence de la drosophile.
+
+### Test des paramètres d'alignement
+
+Ouvrez le [tableau Google Sheet](https://docs.google.com/spreadsheets/d/1Cxe_UCjYfFXXRGcaMgyTm_m6uJrKGDy_UYKGS4K-EZM/) dans une nouvelle fenêtre de votre navigateur. Rendez-vous dans l'onglet "Test alignement RNAseq".
+
+Choisissez vos paramètres de mapping **à l'exclusion de -n ou -v avec 3 mismatch, et de l'option -a**. Sélectionnez des paramètres différents de ceux des autres. Indiquez les sur la ligne du tableau qui commence par votre prénom. 
+
+Récupérez le fichier fastq de l'échantillon *SF2* depuis l'historique "RNA dataset". Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
+
+Nous allons utiliser l’outil ***Map with Bowtie for Illumina*** sur les données brutes de l'échantillon *SF2* en alignant les lectures sur le génome de référence de la drosophile pour tester différents paramètres d'alignement.
 
 En cas de soucis d'affichage des données en entrée de l'outil Bowtie, reportez vous aux [annexes](./annexes.md) pour savoir comment changer le type des données.
 
-![Alignement avec Bowtie](img/rna/bowtie.png "Alignement avec Bowtie")
+![Alignement avec Bowtie](img/rna/bowtie1.png "Alignement avec Bowtie")
+
+Une fois l'alignement effectué, indiquez le nombre et le pourcentage de lectures alignées et le temps mis par le programme à s'exécuter dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1Cxe_UCjYfFXXRGcaMgyTm_m6uJrKGDy_UYKGS4K-EZM/).
+
+
+### Alignements des lectures des réplicats SF et WT
+
+Maintenant que vous avez déterminé les options qui vous paraissent les plus pertinentes à utiliser, lancez l’alignement de votre collection de fichier fastq à l'aide de l’outil ***Map with Bowtie for Illumina***.
+
+![Alignement avec Bowtie](img/rna/bowtie2.png "Alignement avec Bowtie")
 
 !!! hint "Questions"
 
@@ -52,25 +72,9 @@ En cas de soucis d'affichage des données en entrée de l'outil Bowtie, reportez
 --------------------------------------------------------------------------------
 ## Conversion des fichiers SAM
 
-Vous allez effectuer la conversion des fichiers SAM en BAM en éliminant les lectures qui ne se sont pas alignées, puis trier les alignements suivant les coordonnées chromosomiques du génome de référence.
+Vous allez effectuer la conversion des fichiers SAM en BAM en éliminant les lectures qui ne se sont pas alignées, puis trier les alignements suivant les coordonnées chromosomiques du génome de référence. Pour cela vous allez utiliser l’outil ***Samtools view***.
 
-D'abord il faut récupérer le fasta du génome de la *drosophile* dans l'historique actuel. Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
-
-![Récupération du génome de la drosophile](img/rna/copy_genome.png "Récupération du génome de la drosophile")
-
-Vous allez ensuite convertir le SAM en BAM et trier le fichier BAM en utilisant l’outil ***SAM-to-BAM***.
-
-![Conversion du SAM en BAM](img/rna/sam-to-bam.png "Conversion du SAM en BAM")
-
-<!---
-Puis enfin le filtrage pour supprimer du fichier BAM les lectures qui n’ont pas été alignées et ainsi réduire la taille du fichier. Pour cela on utilise l’outil ***FilterSamReads***.
-
-![Filtrage BAM](img/rna/filter_bam.png "Filtrage BAM")
--->
-
-Puis enfin le filtrage pour supprimer du fichier BAM les lectures qui n’ont pas été alignées et ainsi réduire la taille du fichier. Pour cela on utilise l’outil ***Filter SAM or BAM***.
-
-![Filtrage BAM](img/rna/filter_bam2.png "Filtrage BAM")
+![Conversion et filtrage SAM](img/rna/sam-filter-bam.png "Conversion et filtrage SAM")
 
 
 --------------------------------------------------------------------------------
@@ -113,6 +117,9 @@ Vous devez indiquer à l’outil quels sont les échantillons à rattacher à ch
 	- Quel est le nombre de gènes différentiellement exprimés que vous obtenez ?
 	- L’étape d’analyse différentielle s’est elle bien déroulée ?
 
+
+### Visualisation sous forme de volcano plot
+
 Pour aller plus loin dans la visualisation vous allez réaliser un volcano plot sur vos résultats grâce à l'outil ***Volcano Plot***.
 Attention à bien faire correspondre les colonnes demandées au format de sortie de DESeq2.
 
@@ -121,3 +128,5 @@ Attention à bien faire correspondre les colonnes demandées au format de sortie
 ![Volcano plot](img/rna/volcano_result.png "Volcano result")
 
 Un [tutoriel](https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot/tutorial.html) très bien fait vous permet d'aller plus loin avec cet outil.
+
+Par exemple voici comment visualiser sur le volcano plot la liste des gènes cibles des amorces que vous avez utilisés en 

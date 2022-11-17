@@ -4,16 +4,6 @@ Cette page regroupe différentes solutions utilisées dans Galaxy au cours des t
 
 
 --------------------------------------------------------------------------------
-## L'outil ne s'affiche pas dans le menu
-
-Il arrive que l'outil que l'on veut utiliser dans Galaxy ne s'affiche pas. Pour cela il faut relancer le serveur Galaxy. Cela s'effectue dans la console après être passé en mode "root" avec le code suivant :
-
-`supervisorctl restart galaxy:`
-
-![Redémarrer le serveur Galaxy](img/annexes/restart_galaxy.png "Redémarrer le serveur Galaxy")
-
-
---------------------------------------------------------------------------------
 ## Modifier le type des données
 
 Il peut arriver qu'un fichier, pourtant présent dans votre historique, ne soit pas visible en entrée d'un outil Galaxy. Par exemple il peut arriver que le fichier fastq que vous avez chargé dans votre historique n’apparait pas comme disponible dans l’outil Bowtie.

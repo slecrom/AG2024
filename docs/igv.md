@@ -20,15 +20,15 @@ Les fichiers à télécharger sont les suivants :
 
 - Le génome de la *drosophile* au format fasta : dmel-MAIN-chromosome-r6.18.fasta
 - Le fichier d'annotation au format gtf : dmel-all-r6.18.gtf
-- Les fichiers baml filtrés et leurs index d'un des fichiers SF et d'un des fichiers WT : SF1_filtered.bam, SF1_filtered.bai, WT1_filtered.bam, WT1_filtered.bai
-
-Vous pouvez renommer les fichiers fasta et gtf pour leur donner des noms plus courts (exemple : dmel-r6.18.xxx). Ils seront plus lisibles dans IGV.
+- Les fichiers bam filtrés et leurs index d'un des fichiers SF et d'un des fichiers WT : SF1_filtered.bam, SF1_filtered.bai, WT1_filtered.bam, WT1_filtered.bai
 
 !!! danger "Attention"
 
 	Pour ces derniers les deux fichiers sont dans le même jeu de données. Il faut bien récupérer les deux, le jeux de données (.bam) et l'index (.bai).
 
 ![Télécharger les fichiers bam](img/igv/galaxy_download.png "Télécharger les fichiers bam")
+
+Vous pouvez renommer les fichiers fasta et gtf pour leur donner des noms plus courts (exemple : dmel-r6.18.xxx). Ils seront plus lisibles dans IGV.
 
 
 --------------------------------------------------------------------------------
