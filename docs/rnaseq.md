@@ -12,7 +12,7 @@
 
 	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. Elles ne sont en aucun cas la base de l’évaluation de votre travail.
 
-Vous allez partir de l'historique que vous avez créé mardi où se trouve la collection des données de séquençage des ARN WT et SF ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2022/Loading_data_in_galaxy/#5-dataset-collections)).
+Vous allez partir de l'historique que vous avez créé mardi où se trouve les deux  collections des données de séquençage des ARN WT et SF ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2022/Loading_data_in_galaxy/#5-dataset-collections)).
 
 
 --------------------------------------------------------------------------------
