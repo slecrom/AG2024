@@ -16,11 +16,16 @@ IGV se lance en ouvrant un terminal et en indiquant le chemin vers le logiciel :
 
 Vous allez utiliser IGV en local sur votre machine. Il vous faut récupérer un certain nombre de fichier depuis votre serveur Galaxy. Pour cela vous devez cliquez sur l'icône en forme de disquette.
 
+!!! danger "Attention"
+
+	Pensez à choisir dans les réglages de votre navigateur la possibilité qu'il vous demande systématiquement où enregistrer le fichier. Cela vous permettra également de les renommer.
+
+
 Les fichiers à télécharger sont les suivants :
 
 - Le génome de la *drosophile* au format fasta : dmel-MAIN-chromosome-r6.18.fasta
 - Le fichier d'annotation au format gtf : dmel-all-r6.18.gtf
-- Les fichiers bam filtrés et leurs index d'un des fichiers SF et d'un des fichiers WT : SF1_filtered.bam, SF1_filtered.bai, WT1_filtered.bam, WT1_filtered.bai
+- Les fichiers bam filtrés, triés et leurs index d'un des fichiers SF et d'un des fichiers WT : SF1.bam, SF1.bai, WT1.bam, WT1x.bai
 
 !!! danger "Attention"
 
@@ -36,9 +41,9 @@ Vous pouvez renommer les fichiers fasta et gtf pour leur donner des noms plus co
 
 Pour utiliser facilement IGV et retrouver ses données sur le long terme, il est vivement conseillé de travailler dans des sessions. Pour ouvrir une session, allez dans "File" et créer une nouvelle session en sélectionnant "New session".
 
-Plusieurs génomes sont disponibles sur le serveur d'IGV. Si vous travaillez avec un de ces génomes, vous n'avez qu’à simplement le choisir depuis le menu "Genomes" puis dans le menu déroulant proposé par "Select Hosted Genomes" (malheureusement cette fonction est bloquée sur notre VM).
+Plusieurs génomes sont disponibles sur le serveur d'IGV. Si vous travaillez avec un de ces génomes, vous n'avez qu’à simplement le choisir depuis le menu "Genomes" puis dans le menu déroulant proposé par "Select Hosted Genomes".
 
-Vous allez importer manuellement le génome dans IGV. Pour cela dans le menu "Genomes", vous devez choisir "Load Genome from File". Une boîte de dialogue vous demande de sélectionner le fichier fasta contenant les séquences.
+Pour le TP, vous allez importer manuellement le génome dans IGV. Pour cela dans le menu "Genomes", vous devez choisir "Load Genome from File". Une boîte de dialogue vous demande de sélectionner le fichier fasta contenant les séquences.
 
 Vous allez ensuite charger le fichier des annotations, décrites dans des fichiers .gff ou .gtf. Ce sont des fichiers tabulés qui associent par exemple un nom de gène à sa position dans le génome. Allez dans le menu "File", sélectionnez "Load from file" et sélectionnez le fichier d'annotation.
 
@@ -68,6 +73,12 @@ En effectuant un clic-droit sur une des pistes (track) vous avez accès à un gr
 
 ![Alignements colorés par brins](img/igv/color_alignment.png "Alignements colorés par brins")
 
+Il est aussi possible de configurer la plage de données de chacune des pistes ou de toutes les pistes. Par défaut, les pistes sont en mode Autoscale, leur minimum et maximum est adapté aux données d'une seule piste pour favoriser la visualisation des données de chaque piste individuellement.
+
+Quand il s'agit de comparer plusieurs pistes, il peut être plus intéressant de fixer le minimum et maximum du groupe de pistes de façon à rendre la visualisation facilement comparable. Il faut pour cela sélectionner les pistes puis effectuer un clic droit sur cette sélection et choisir "Set Data Range". La boite de dialogue indique par défaut la valeur minimum de ratio pour les pistes ainsi que la valeur maximale globale et la valeur médiane. Il suffit donc de valider cette plage de données pour appliquer la même échelle à votre groupe de pistes.
+
+![Fixed scale](img/igv/igv_fixedscale.png "Fixed scale")
+
 
 --------------------------------------------------------------------------------
 ## Calcul de la couverture avec igvtools
@@ -80,14 +91,6 @@ L'exécution d'igvtool est plus ou moins longue selon la taille de votre fichier
 La résolution des couvertures pré-calculées est plus faible que celles calculées de façon dynamique mais on conserve tout de même une bonne partie de l'information. Il est alors possible de supprimer la piste en choisissant "Remove track" par un clic droit dans la colonne de gauche.
 
 ![Remove track](img/igv/igv_coverage.png "Remove track")
-
-Il est aussi possible de configurer la plage de données de chacune des pistes ou de toutes les pistes. Par défaut, les pistes sont en mode Autoscale, leur minimum et maximum est adapté aux données d'une seule piste pour favoriser la visualisation des données de chaque piste individuellement.
-
-![Autoscale](img/igv/igv_autoscale.png "Autoscale")
-
-Quand il s'agit de comparer plusieurs pistes, il peut être plus intéressant de fixer le minimum et maximum du groupe de pistes de façon à rendre la visualisation facilement comparable. Il faut pour cela sélectionner les pistes puis effectuer un clic droit sur cette sélection et choisir "Set Data Range". La boite de dialogue indique par défaut la valeur minimum de ratio pour les pistes ainsi que la valeur maximale globale et la valeur médiane. Il suffit donc de valider cette plage de données pour appliquer la même échelle à votre groupe de pistes.
-
-![Fixed scale](img/igv/igv_fixedscale.png "Fixed scale")
 
 
 --------------------------------------------------------------------------------
