@@ -4,6 +4,20 @@ Cette page regroupe différentes solutions utilisées dans Galaxy au cours des t
 
 
 --------------------------------------------------------------------------------
+## Commandes du programme screen
+
+Screen est un programme linux utile qui crée, attache, détache ou rattache des sessions shell "virtuelles". Screen permet d'exécuter des processus linux simultanés dans des environnements isolés qui peuvent être mis en arrière-plan tout en travaillant avec la console à d'autres tâches.
+
+Commandes à connaître :
+
+- `screen -ls` liste toutes les sessions screen disponibles, attachées (actuellement actives) ou détachées en arrière-plan ;
+- `screen -r <session>` rattache une session écran détachée ;
+- `CtrlA puis D` détache la session active ;
+- Tapez `exit` pour mettre fin à la session active ;
+- `screen -S <session>` crée une nouvelle session.
+
+
+--------------------------------------------------------------------------------
 ## Modifier le type des données
 
 Il peut arriver qu'un fichier, pourtant présent dans votre historique, ne soit pas visible en entrée d'un outil Galaxy. Par exemple il peut arriver que le fichier fastq que vous avez chargé dans votre historique n’apparait pas comme disponible dans l’outil Bowtie.
