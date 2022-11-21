@@ -8,13 +8,24 @@ Cette page regroupe différentes solutions utilisées dans Galaxy au cours des t
 
 Screen est un programme linux utile qui crée, attache, détache ou rattache des sessions shell "virtuelles". Screen permet d'exécuter des processus linux simultanés dans des environnements isolés qui peuvent être mis en arrière-plan tout en travaillant avec la console à d'autres tâches.
 
-Commandes à connaître :
+Commandes utiles :
 
 - `screen -ls` liste toutes les sessions screen disponibles, attachées (actuellement actives) ou détachées en arrière-plan ;
 - `screen -r <session>` rattache une session écran détachée ;
 - `CtrlA puis D` détache la session active ;
 - Tapez `exit` pour mettre fin à la session active ;
 - `screen -S <session>` crée une nouvelle session.
+
+
+--------------------------------------------------------------------------------
+## Gestion du serveur Galaxy
+
+- `galaxyctl status` donne l'état du serveur galaxy ;
+- `galaxyctl start` si d'aventure le serveur galaxy est arrêté, mais cela ne devrait pas arriver ;
+- `galaxyctl stop` pour arrêter le serveur, mais il n'y a en principe pas de raison de le faire ;
+- `galaxyclt restart` pour redémarrer le serveur, utile si besoin de mettre à jour des références, des changements de préférence, etc. 
+
+Au redémarrage d'une machine virtuelle (VM) suspendue, on retrouve Galaxy dans l'état où il était lors de sa suspension. À noter cependant que si on suspend la VM au milieu d'un job Galaxy en exécution cela mettra le job en question en erreur.
 
 
 --------------------------------------------------------------------------------

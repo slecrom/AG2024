@@ -1,4 +1,4 @@
-# TP2 - Génétique de l’épigénétique chez la drosophile : des ARN (petits et grands) pour la défense de l’intégrité du génome
+# Génétique de l’épigénétique chez la drosophile : des ARN (petits et grands) pour la défense de l’intégrité du génome
 
 **Contenu du site**
 
@@ -10,6 +10,8 @@
 Pour réaliser ces analyses nous allons utiliser l’outil Galaxy. Il s’agit d’une plateforme basée sur un système de serveur Web ouvert sur lequel vous pouvez effectuer en ligne un certain nombre de traitements sur vos données. Le projet Galaxy dispose d’un [site principal](https://usegalaxy.org/).
 
 Vous pouvez également trouver d’autres miroirs du site principal de Galaxy adapté à diverses communautés, chacune ayant choisi d’ajouter au sein du système ces propres modules. Une [liste des principaux miroirs et de leurs communautés](https://galaxyproject.org/use/) est disponible en ligne.
+
+Nous démarrons le TP là où il a été laissé hier. Voici le lien [vers la documentation Github faite par ARTbio](https://artbio.github.io/startbio/AnalyseGenomes_2022/outline/)
 
 !!! danger "Attention"
 
