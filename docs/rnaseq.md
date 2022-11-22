@@ -129,4 +129,33 @@ Attention à bien faire correspondre les colonnes demandées au format de sortie
 
 Un [tutoriel](https://training.galaxyproject.org/training-material/topics/transcriptomics/tutorials/rna-seq-viz-with-volcanoplot/tutorial.html) très bien fait vous permet d'aller plus loin avec cet outil.
 
-Par exemple voici comment visualiser sur le volcano plot la liste des gènes cibles des amorces que vous avez utilisés en 
+Par exemple voici comment visualiser sur le volcano plot la liste des gènes cibles des amorces que vous avez utilisés en qPCR.
+
+Comme vous l'avez fait pour [la liste des chromosomes de la drosophile](https://artbio.github.io/startbio/AnalyseGenomes_2022/Preparing_reference/#a-simplify-fasta-headers), créez la liste des noms de gènes cibles de vos amorces de qPRC dans votre historique Galaxy. Appelez la "cibles_pcr".
+
+Voici la liste des gènes
+```
+FBgn0011761
+FBgn0004400
+FBgn0037703
+FBgn0000158
+FBgn0002626
+FBgn0022764
+```
+
+Une fois importée dans votre historique, modifiez le type de données pour "tabular".
+Relancez l'outil ***Volcano Plot*** avec les réglages ci-dessous.
+
+![Volcano plot](img/rna/volcano_plot2.png "Volcano plot")
+
+![Volcano plot](img/rna/volcano_result2.png "Volcano result")
+
+
+--------------------------------------------------------------------------------
+## Bonus : obtenir une vue d'ensemble des données
+
+L'outil **[MultiQC](https://multiqc.info/)** permet de regrouper les résultats des analyses bioinformatiques portant sur de nombreux échantillons dans un seul rapport.
+
+![MultiQC](img/rna/multiqc.png "MultiQC")
+
+
