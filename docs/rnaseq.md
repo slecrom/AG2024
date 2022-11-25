@@ -48,7 +48,7 @@ Choisissez vos paramètres de mapping **à l'exclusion de -n ou -v avec 3 mismat
 
 Récupérez le fichier fastq de l'échantillon *SF2* depuis l'historique "RNA dataset". Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
 
-Nous allons utiliser l’outil ***Map with Bowtie for Illumina*** sur les données brutes de l'échantillon *SF2* en alignant les lectures sur le génome de référence de la drosophile pour tester différents paramètres d'alignement.
+Nous allons utiliser l’outil ***Map with Bowtie for Illumina*** sur les données brutes de l'échantillon *SF2* en alignant les lectures sur le génome de référence de la drosophile pour tester différents paramètres d'alignement. Pour sélectionner un élément d'une collection il faut cliquer sur l'icône en forme de dossier au bout de la ligne de choix du fichier fastq.
 
 En cas de soucis d'affichage des données en entrée de l'outil Bowtie, reportez vous aux [annexes](./annexes.md) pour savoir comment changer le type des données.
 
@@ -131,7 +131,7 @@ Un [tutoriel](https://training.galaxyproject.org/training-material/topics/transc
 
 Par exemple voici comment visualiser sur le volcano plot la liste des gènes cibles des amorces que vous avez utilisés en qPCR.
 
-Comme vous l'avez fait pour [la liste des chromosomes de la drosophile](https://artbio.github.io/startbio/AnalyseGenomes_2022/Preparing_reference/#a-simplify-fasta-headers), créez la liste des noms de gènes cibles de vos amorces de qPRC dans votre historique Galaxy. Appelez la "cibles_pcr".
+Comme vous l'avez fait pour [la liste des chromosomes de la drosophile](https://artbio.github.io/startbio/AnalyseGenomes_2022/Preparing_reference/#a-simplify-fasta-headers), créez la liste des noms de gènes cibles de vos amorces de qPRC dans votre historique Galaxy. Appelez la "cibles_pcr". Indiquez "tabular" pour type de données.
 
 Voici la liste des gènes
 ```
@@ -143,7 +143,6 @@ FBgn0002626
 FBgn0022764
 ```
 
-Une fois importée dans votre historique, modifiez le type de données pour "tabular".
 Relancez l'outil ***Volcano Plot*** avec les réglages ci-dessous.
 
 ![Volcano plot](img/rna/volcano_plot2.png "Volcano plot")
