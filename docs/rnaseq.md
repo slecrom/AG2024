@@ -99,6 +99,10 @@ Le décompte des alignements va se faire sur le fichier BAM filtré et trié que
 	- Mesurez la moyenne, la médiane et les quartiles de cette distribution ?
 
 
+### Utilisation d'un workflow
+
+Pour répondre aux questions précédentes, utilisez le [workflow disponible en ligne](https://raw.githubusercontent.com/ARTbio/AnalyseGenome/main/Exercises/Galaxy-Workflow-Table_and_statistics.ga) et suivez le tutoriel de mardi sur [la façon d'utiliser les workflows](https://artbio.github.io/startbio/AnalyseGenomes_2022/Run_workflow/) et d'[installer les outils dans Galaxy qui vous manquent](https://artbio.github.io/startbio/AnalyseGenomes_2022/Preparing_reference/#a-simplify-fasta-headers).
+
 --------------------------------------------------------------------------------
 ## Analyse différentielle
 
