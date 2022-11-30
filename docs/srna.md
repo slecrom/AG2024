@@ -102,7 +102,10 @@ Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-historiques) 
 
 	- Combien d’alignements ont été trouvés ?
 	- Combien de lectures n’ont pas été alignées ?
-	- Combien d’alignements ont été filtrés avec les options que vous avez choisies ?
+
+La sortie standard et l’erreur standard sont accessibles dans Galaxy. Pour cela vous devez cliquer dans votre jeu de données sur l’icône d’information (i). La page qui s’affiche vous donne accès aux paramètres de lancement de l’outil utilisé et aux différentes sorties produites.
+
+![Sortie et erreur standard](img/srna/sortie_standard.png "Sortie et erreur standard")
 
 Pour chacun des éléments d’annotation (sans oublier le génome complet de la drosophile) reportez dans le [tableau Google Sheet](https://docs.google.com/spreadsheets/d/1Cxe_UCjYfFXXRGcaMgyTm_m6uJrKGDy_UYKGS4K-EZM/) le nombre lectures obtenues après chaque alignement.
 
@@ -112,10 +115,6 @@ Comme vous êtes plusieurs à travailler sur les mêmes fichiers, répartissez-v
 
 	- Où retrouvez-vous principalement les petits ARN ?
 	- Cette répartition correspond-elle à ce que vous attendiez ?
-
-La sortie standard et l’erreur standard sont accessibles dans Galaxy. Pour cela vous devez cliquer dans votre jeu de données sur l’icône d’information (i). La page qui s’affiche vous donne accès aux paramètres de lancement de l’outil utilisé et aux différentes sorties produites.
-
-![Sortie et erreur standard](img/srna/sortie_standard.png "Sortie et erreur standard")
 
 
 --------------------------------------------------------------------------------
@@ -145,18 +144,11 @@ Vous allez maintenant comparer la distribution des petits ARN sur des régions s
 
 ### Normalisation des échantillons
 
-Avant de pouvoir comparer les distributions des lectures entre elles, vous devez d’abord normaliser les échantillons entre eux. Pour cela vous allez calculer deux facteurs de normalisation (Scaling Factor) à l’aide des mesures suivantes :
-
-1. Nombre de lecture alignées sur le génome de la drosophile - nombre de lectures alignées sur la banque « divers » - nombre de lectures alignées sur les « tRNA » ;
-2. Nombre de lectures alignées sur les miRNA.
-
-Dans chaque cas vous utiliserez l’échantillon ayant le moins de lecture comme référence pour calculer vos facteurs de normalisations (NF1 et NF2).
+Avant de pouvoir comparer les distributions des lectures entre elles, vous devez d’abord normaliser les échantillons entre eux. Pour cela vous allez calculer le facteur de normalisation (Scaling Factor) à l’aide de la mesure en RPM (read per million) soit le ratio permettant de rapporter le nombre de lectures obtenues par banque après l'étape de clipping à un nombre de 1 million de lectures.
 
 !!! hint "Questions"
 
 	- Quels sont les facteurs de normalisation que vous obtenez ?
-	- Avez-vous de grandes différences entre les deux méthodes de calcul ?
-	- Quelle est selon vous la meilleure méthode de normalisation ?
 
 
 ### Distribution des lectures par taille
