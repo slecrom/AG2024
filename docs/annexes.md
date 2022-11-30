@@ -23,7 +23,7 @@ Commandes utiles :
 - `galaxyctl status` donne l'état du serveur galaxy ;
 - `galaxyctl start` si d'aventure le serveur galaxy est arrêté, mais cela ne devrait pas arriver ;
 - `galaxyctl stop` pour arrêter le serveur, mais il n'y a en principe pas de raison de le faire ;
-- `galaxyclt restart` pour redémarrer le serveur, utile si besoin de mettre à jour des références, des changements de préférence, etc. 
+- `galaxyctl restart` pour redémarrer le serveur, utile si besoin de mettre à jour des références, des changements de préférence, etc. 
 
 Au redémarrage d'une machine virtuelle (VM) suspendue, on retrouve Galaxy dans l'état où il était lors de sa suspension. À noter cependant que si on suspend la VM au milieu d'un job Galaxy en exécution cela mettra le job en question en erreur.
 
