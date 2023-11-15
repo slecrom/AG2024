@@ -4,13 +4,13 @@
 
 	Le but de cette séance de Travaux Pratiques est d’effectuer le traitement des données du séquençage des petits ARN.
 	
-	À la fin de la séance vous devez pouvoir comparer les profils d’expression des petits ARN dans les différentes conditions d’étude.
+	À la fin de la séance vous devez pouvoir comparer les profils d’expression des petits ARN de lignées sauvages (WT) et mutantes pour le gène *Kdm3* (GLKD).
 
 !!! hint ""
 
-	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. Elles ne sont en aucun cas la base de l’évaluation de votre travail.
+	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. Elles ne sont pas la base de l’évaluation de votre travail.
 
-Vous allez partir de l'historique que vous avez créé hier où se trouve la collection des données de séquençage des petits ARN GRH-103 et GRH-105 ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2022/Loading_data_in_galaxy/#5-dataset-collections)).
+Vous allez partir de l'histoire que vous avez créé hier où se trouve les données de séquençage des petits ARN WT et GLKD ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2023/Loading_data_in_galaxy/#5-dataset-collections)).
 
 
 --------------------------------------------------------------------------------
