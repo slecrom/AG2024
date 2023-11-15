@@ -12,6 +12,7 @@
 
 Vous allez partir de l'histoire que vous avez créé hier où se trouve les données de séquençage des petits ARN WT et GLKD ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2023/Loading_data_in_galaxy/#5-dataset-collections)).
 
+Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller travailler dans le [tableau partagé accessible en ligne](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
 
 --------------------------------------------------------------------------------
 ## Contrôle qualité des lectures
@@ -30,10 +31,10 @@ Si aucune image ne s'affiche, rendez-vous dans les [annexes](./annexes.md#resoud
 
 En vous aidant de la notice d’utilisation du logiciel, regardez les résultats du contrôle de qualité effectué par FastQC sur votre fichier fastq.
 
+Reporter le "nombre lectures totales" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+
 !!! hint "Questions"
 
-	- Combien de lectures avez-vous dans vos fichiers ?
-	- Quelle est la version du format fastq utilisée (voir [wikipedia](https://en.wikipedia.org/wiki/FASTQ_format)) ?
 	- Les lectures sont-elles de bonne qualité pour poursuivre l’analyse ?
 	- Pouvez-vous observer des biais particuliers à prendre en compte pour la suite ?
 
@@ -41,20 +42,21 @@ En vous aidant de la notice d’utilisation du logiciel, regardez les résultats
 --------------------------------------------------------------------------------
 ## Suppression des séquences des adaptateurs
 
-Les séquences obtenues sont plus longues que celles des petits ARN que l’on veut étudier. Elles contiennent donc les séquences des adaptateurs situées en 3’. Nous allons réaliser une étape de **clipping** qui consiste à supprimer les adaptateurs présents dans les séquences.
+Les séquences obtenues sont plus longues que celles des petits ARN que l’on veut étudier. Elles contiennent donc les séquences des adaptateurs situées en 3’. Vous allez réaliser une étape de **clipping** qui consiste à supprimer les adaptateurs présents dans les séquences.
 
-On va également profiter de cette étape pour ne conserver que les séquences de tailles comprises entre 18 et 30, celles correspondants aux petits ARN que nous voulons étudier.
+Vous allez également profiter de cette étape pour ne conserver que les séquences de tailles comprises entre 18 et 30, celles correspondants aux différentes populations de petits ARN que nous voulons étudier.
 
-Vous allez pour cela utiliser l’outil ***Clip adapter***. Les réglages à modifier sont entourés en rouge.
+Vous allez pour cela utiliser l’outil ***Clip adapter***. Les réglages à modifier sont entourés en rouge sur la copie d'écran ci-dessous.
 
 ![Clipping des adaptateurs](img/srna/clipping.png "Clipping des adaptateurs")
 
 Sur les fichiers fastq obtenus en sortie de cette étape de clipping, relancez une analyse de la qualité des séquences avec l’outil ***FastQC***.
 
+Reporter le "nombre lectures 18-30nt" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+
+
 !!! hint "Questions"
 
-	- Combien de lectures avez-vous conservé dans vos fichiers ?
-	- Quel pourcentage des séquences de départ cela représente-t-il ?
 	- L’étape de clipping a-t-elle bien réalisé ce que vous souhaitiez ?
 	- Que pensez-vous de la distribution de taille des séquences ?
 
