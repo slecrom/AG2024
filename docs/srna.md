@@ -23,7 +23,7 @@ Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller tr
 
 Dans Galaxy vous allez utiliser l’outil ***FastQC Read Quality reports***. Pensez à cliquer sur l'icône en forme de dossier pour accéder à votre collection.
 
-Cliquer sur "Execute" sans modifier les paramètres.
+Cliquez sur "Execute" sans modifier les paramètres.
 
 ![FastQC](img/srna/qc.png "FastQC")
 
@@ -31,7 +31,7 @@ Si aucune image ne s'affiche, rendez-vous dans les [annexes](./annexes.md#resoud
 
 En vous aidant de la notice d’utilisation du logiciel, regardez les résultats du contrôle de qualité effectué par FastQC sur votre fichier fastq.
 
-Reporter le "nombre lectures totales" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+Reportez le "nombre lectures totales" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
 
 !!! hint "Questions"
 
@@ -52,7 +52,7 @@ Vous allez pour cela utiliser l’outil ***Clip adapter***. Les réglages à mod
 
 Sur les fichiers fastq obtenus en sortie de cette étape de clipping, relancez une analyse de la qualité des séquences avec l’outil ***FastQC***.
 
-Reporter le "nombre lectures 18-30nt" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+Reportez le "nombre lectures 18-30nt" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
 
 
 !!! hint "Questions"
@@ -60,73 +60,89 @@ Reporter le "nombre lectures 18-30nt" et le "%GC" dans le [tableau partagé](htt
 	- L’étape de clipping a-t-elle bien réalisé ce que vous souhaitiez ?
 	- Que pensez-vous de la distribution de taille des séquences ?
 
-
+<!---
 Vous avez la possibilité de renommer les collections en cliquant sur l'une d'entre elle et dans le nouvelle colonne qui s'ouvre à droite sur le crayon.
 
 ![Renommer une collection](img/srna/rename_collection.png "Renommer une collection")
-
+--->
 
 --------------------------------------------------------------------------------
-## Annotation des petits ARN
+## Filtrage des contaminants
 
-L’objectif de cette étape est d’annoter les éléments génomiques dans lesquels s’alignent les petits ARN qui ont été séquencés. Pour cela vous allez réaliser une série d’alignements avec le logiciel **bowtie** contre différentes banques d’éléments génomique de la drosophile.
 
-Pour ce TP vous allez utiliser la version 6.18 du génome de *Drosophila melanogaster* dont les fichiers de séquence au format fasta sont accessibles sur le [site FTP de Flybase](http://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.18_FB2017_05/fasta/)
+### Sélection des éléments biologiques à filtrer
 
-Dans la liste des éléments disponibles nous allons utiliser les fichiers de séquences des :
+L’objectif de cette étape est de retirer de nos petits ARN certains éléments génomiques sur lesquels on ne veut pas travailler. Il s'agit des éléments suivants :
 
-- Gènes : genes
-- Introns : introns
-- miRNA : miRNA
-- ARN non codants : ncRNA
-- piRNA clusters connus (142) : piRNA_clusters
-- Transposons : transposons
-- ARN divers qui contiennent les séquences des ribosomes et des snoRNA : miscRNA
-- ARN de transferts : tRNA
-- Transcrits : transcrits
-- Et le génome de la drosophile : dmel-MAIN-chromosome-r6.18
+- miRNA : micro ARN
+- miscRNA : small nuclear RNA (snRNA), small nucleolar RNA (snoRNA), et ARN ribosomique (rRNA)
+- tRNA : ARN de transferts
 
-Comme pour cette étape l’objectif est d’obtenir rapidement les fichiers d’alignements on va se concentrer sur la récupération des meilleurs alignements possibles. En vous aidant de la [documentation du logiciel bowtie](http://bowtie-bio.sourceforge.net/manual.shtml), répondez aux questions ci-dessous.
+Pour ce TP vous allez utiliser la version 6.54 du génome de *Drosophila melanogaster* dont les fichiers de séquence au format fasta sont accessibles sur le [site FTP de Flybase](https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.54_FB2023_05/fasta/)
+
+Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-historiques) pour savoir comment copier les données entre historiques des fichiers fasta dont vous avez besoin.
+
+
+### Choix des paramètres d'alignement
+
+Pour effectuer ce filtrage, vous allez réaliser une série d’alignements avec le logiciel **bowtie** contre les différentes les banques fasta de ces éléments génomiques en ne gardant à chaque étape que les séquences qui ne se sont pas alignées.
+
+L’objectif est d’obtenir rapidement les d’alignements pour effectuer cette série de filtrages. En vous aidant de la [documentation du logiciel bowtie](http://bowtie-bio.sourceforge.net/manual.shtml), répondez aux questions ci-dessous.
 
 !!! hint "Questions"
 
-	- Quelles sont les options qui vont permettre d’accélérer la vitesse de calcul ?
-	- Quelle option choisir pour ne conserver que le meilleur alignement ?
-	- Comment limiter le nombre de mismatch sur toute la séquence ?
+	- Quelle est l'option du paramètre "alignment mode" qui va permettre d’accélérer la vitesse d'alignement ?
+	- Quel nombre de mismatch choisir pour filtrer au maximum les séquences contaminantes ?
 
-Nous allons utiliser l’outil ***sR_bowtie*** sur les données clippées en alignant les lectures sur un fichier d’éléments du génome de la drosophile obtenu précédemment.
-
-Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-historiques) pour savoir comment copier les données entre historiques des fichiers fasta de référence dont vous avez besoin.
+Nous allons utiliser l’outil ***sR_bowtie*** de Galaxy sur les données clippées en alignant les lectures sur un fichier d’éléments du génome de la drosophile obtenu précédemment.
 
 ![Annotation](img/srna/annotation.png "Annotation")
 
-!!! hint "Questions"
+!!! hint "Question"
 
-	- Combien d’alignements ont été trouvés ?
-	- Combien de lectures n’ont pas été alignées ?
+	- Quel paramètrage d'alignement allez vous choisir ?
 
+
+### Utilisation d'un workflow
+
+Ces filtrages sont répétitifs. Vous allez utiliser un workflow pour lancer automatiquement les 3 étapes de filtration contre les miRNA, miscRNA et tRNA. 
+
+Le workflow "sRNA clean-up" que vous allez utiliser est disponible [en cliquant ici](https://psilo.sorbonne-universite.fr/index.php/s/sXDFdMB8TPZBjpy)
+
+![sRNA clean-up workflow](img/srna/srna_cleanup_workflow.png "sRNA clean-up workflow")
+
+Aidez-vous du tutoriel [Running a galaxy workflow](https://artbio.github.io/startbio/AnalyseGenomes_2023/Run_workflow/) que vous avez vu mardi et lancez le workflow sur les données clippées.
+
+Sur les fichiers fastq obtenus en sortie de ce filtrage, relancez une analyse de la qualité des séquences avec l’outil ***FastQC***.
+
+N'oubliez pas de renommer chaque étape dans l'histoire Galaxy pour vous y retrouver plus facilement.
+
+Reportez le "nombre de lectures nettoyées" et leur "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+
+Reportez également le nombre de lectures alignées à chaque étape du filtrage. Attention ! ces informations ne se trouvent pas dans l'histoire. Pour les obtenir il faut aller dans le menu "Workflow" et en cliquant sur le workflow "sRNA clean-up" choisir "invocations"
+
+![Workflow invocations](img/srna/workflow_invocations.png "Workflow invocations")
+
+Les différents lancement du workflow qui ont été effectués apparaissent dans une nouvelle fenêtre. Affichez les détails d'un lancement en cliquant sur le chevron en début de ligne puis sur "Steps". Cliquez ensuite sur les réglages de l'étape qui vous intéresse (icône en forme de clef) puis sur "Output Dataset Collections" et enfin sur "Bowtie output". En déployant les résultats vous pouvez accéder pour vos échantillons aux sorties de l'outil d'alignement Bowtie.
+
+![Workflow output](img/srna/workflow_output1.png "Workflow output selection")
+
+![Workflow output](img/srna/workflow_output2.png "Workflow output Bowtie")
+
+<!--
 La sortie standard et l’erreur standard sont accessibles dans Galaxy. Pour cela vous devez cliquer dans votre jeu de données sur l’icône d’information (i). La page qui s’affiche vous donne accès aux paramètres de lancement de l’outil utilisé et aux différentes sorties produites.
 
 ![Sortie et erreur standard](img/srna/sortie_standard.png "Sortie et erreur standard")
-
-Pour chacun des éléments d’annotation (sans oublier le génome complet de la drosophile) reportez dans le [tableau Google Sheet](https://docs.google.com/spreadsheets/d/1Cxe_UCjYfFXXRGcaMgyTm_m6uJrKGDy_UYKGS4K-EZM/) le nombre lectures obtenues après chaque alignement.
-
-Comme vous êtes plusieurs à travailler sur les mêmes fichiers, répartissez-vous le travail.
-
-!!! hint "Questions"
-
-	- Où retrouvez-vous principalement les petits ARN ?
-	- Cette répartition correspond-elle à ce que vous attendiez ?
-
+--->
 
 --------------------------------------------------------------------------------
-## Alignement des lectures sur des régions spécifiques du génome
+## Alignement des lectures sur la région *PLacZ*
 
-Pour aller plus loin dans l’analyse des loci producteurs de piRNA, vous allez aligner spécifiquement les séquences que vous avez obtenues sur des régions génomiques d’intérêt. La première d’entre elle est celle du transgène **P{lacW}**.
+Pour aller plus loin dans l’analyse des loci producteurs de petits ARN, vous allez aligner spécifiquement les séquences que vous avez obtenues sur celle du transgène ***PLacZ***.
 
-Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-historiques) pour savoir comment copier les données entre historiques pour récupérer la séquence fasta de P{lacW}.
+Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-historiques) pour savoir comment copier les données entre historiques pour récupérer la séquence fasta de *PLacZ*.
 
-Nous allons utiliser l’outil ***sR_bowtie*** sur les données clippées en alignant les lectures sur le fichier que l’on vient de télécharger. On cherche maintenant à obtenir des alignements uniques sans ambiguïtés.
+Vous allez utiliser l’outil ***sR_bowtie*** sur les données nettoyées précédentes en alignant les lectures sur la séquence de *PLacZ*. On cherche maintenant à obtenir des alignements à 1 seule position sur la séquence même si ils peuvent s'aligner à plusieurs endroits.
 
 !!! hint "Questions"
 
@@ -135,27 +151,15 @@ Nous allons utiliser l’outil ***sR_bowtie*** sur les données clippées en ali
 
 Lancez l’alignement une fois que vous avez déterminé les paramètres optimaux pour votre analyse.
 
-![Alignement sur P{lacW}](img/srna/bowtie_placw.png "Alignement sur P{lacW}")
+![Alignement sur PLacZ](img/srna/bowtie_placw.png "Alignement sur PLacZ")
 
 
 --------------------------------------------------------------------------------
 ## Comparaison des distributions des petits ARN entre conditions
 
-Vous allez maintenant comparer la distribution des petits ARN sur des régions spécifiques du génome de la drosophile entre les différentes conditions biologiques que vous avez étudiées pendant la partie expérimentale.
+Vous allez maintenant comparer la distribution des petits ARN sur PLacZ entre les conditions WT et GLKD.
 
-
-### Normalisation des échantillons
-
-Avant de pouvoir comparer les distributions des lectures entre elles, vous devez d’abord normaliser les échantillons entre eux. Pour cela vous allez calculer le facteur de normalisation (Scaling Factor) à l’aide de la mesure en RPM (read per million) soit le ratio permettant de rapporter le nombre de lectures obtenues par banque après l'étape de clipping à un nombre de 1 million de lectures.
-
-!!! hint "Questions"
-
-	- Quels sont les facteurs de normalisation que vous obtenez ?
-
-
-### Distribution des lectures par taille
-
-Vous allez ensuite réaliser des graphiques et quantifier la répartition des 3 types de petits ARN (miRNA, siRNA et piRNA) produits pour la séquence de P{lacW} à partir des lectures dans vos différents échantillons. Pour cela vous utiliserez l’outil ***small_rna_maps*** sur chacun de vos fichiers d’alignement en prenant soin d’indiquer pour chacun le facteur de normalisation permettant de corriger les lectures.
+Vous allez réaliser des graphiques et quantifier la répartition des 2 types de petits ARN (siRNA et piRNA) alignés sur la séquence de PLacZ à partir des lectures de vos différents échantillons. Pour cela vous utiliserez l’outil ***small_rna_maps*** sur chacun de vos fichiers d’alignement en prenant soin d’indiquer pour chacun le facteur de normalisation permettant de corriger les lectures calculés dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
 
 ![Distribution des lectures par taille](img/srna/small_rna_maps.png "Distribution des lectures par taille")
 
@@ -163,17 +167,90 @@ Vous allez ensuite réaliser des graphiques et quantifier la répartition des 3 
 
 	- Quelle interprétation faites-vous des histogrammes que vous obtenez ?
 
+--------------------------------------------------------------------------------
+## Obtention des piRNA
 
-### Calcul du taux d’augmentation des piRNA
+### Sélection de la taille des petits ARN
 
-Vous allez maintenant calculer le ratio d’augmentation des piRNA dans le contexte mutant. Téléchargez (icône en forme de disquette) les données obtenues en même temps que le graphique de distribution de taille. Elles vous permettent de récupérer le nombre normalisé de lecture de la taille voulue. En utilisant un tableur vous pouvez additionner les comptages piRNA (entre 23 et 29 nucléotides) et faire le rapport entre les différents génotypes.
+Les séquences de piRNA sont comprises entre 23 et 29 nucéotides. Vous allez réutiliser l’outil ***Clip adapter***. 
 
-![Données de distribution](img/srna/data_size.png "Données de distribution")
+![Clipping des adaptateurs](img/srna/clipping.png "Clipping des adaptateurs")
 
-![Calcul du ratio d'augmentation](img/srna/ratio_pirna.png "Calcul du ratio d'augmentation")
+Sur les fichiers fastq obtenus en sortie de cette étape, relancez une analyse de la qualité des séquences avec l’outil ***FastQC*** afin de vous assurer que tout c'est passé comme vous l'attendiez.
+
+Reportez le "nombre de lectures 23-29nt" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+
+### Conserver les piRNA "uniques"
+
+Le but est maintenant de conserver les piRNA les plus "récents". Pour cela on va sélectionner les piRNA qui s'alignent de façon unique sur le génome sans aucun mismatch.
+
+On utilise l’outil ***sR_bowtie*** sur les piRNA de 23-29 nt. On cherche à obtenir des alignements uniques sans ambiguïtés et sans mismatch.
+
+!!! hint "Questions"
+
+	- Quelle option de sRbowtie allez-vous choisir ?
+	- À quels paramètres du logiciel bowtie cette option correspond-elle ?
+
+Lancez l’alignement une fois que vous avez déterminé les paramètres optimaux pour votre analyse.
+
+!!! danger "Attention"
+
+	Vous voulez récupérer les fichiers Fastq de ces piRNA uniques. Il ne faut pas oublier de sélectionner "Additional fasta output : aligned" dans les options de l'outil.
+
+![Alignement sur PLacZ](img/srna/bowtie_placw.png "Alignement sur PLacZ")
+
+Sur les fichiers fastq des piRNA uniques relancez une analyse de la qualité des séquences avec l’outil ***FastQC***.
+
+Reportez le "nombre de lectures piRNA uniques" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+
+--------------------------------------------------------------------------------
+## Analyse des piRNA uniques
+
+En principe la première position d'un piRNA commence majoritairement par une base Uracil. Vous allez vérifier si vos séquences ont cette caractéristique.
+
+### Sélection des 10 premières bases des séquences
+
+Vous allez utiliser l'outil **Trimmomatic** sur les piRNA uniques pour couper les séquences à 10 nucléotides.
+
+![Trimmomatic](img/srna/trimmomatic.png "Trimmomatic")
+
+### Conversion des fichiers Fastq en fasta
+
+Pour cette étape vous utiliserez l'outil **sequence_format_converter**.
+
+![Fastq to Fasta](img/srna/sequence_format_converter.png "Fastq to Fasta")
+
+### Transformation des bases T en U
+
+Vous avez séquencé de l'ADN mais nous voulons comparer les séquences originales des piRNA. Pour cela vous devez convertir les bases T en U à l'aide de l'outil **Regex Find And Replace**.
+
+![Conversion T en U](img/srna/convertTtoU.png "Conversion T en U")
+
+### Représenter graphiquement la distribution des bases
+
+Vous allez réaliser un "Sequence logo" permettant de représenter la probabilité de trouver chaque base le long des 10 nucléotides de la séquence. Pour en savoir plus vous pouvez consulter le site [WebLogo](https://weblogo.threeplusone.com/).
+
+Utiliser l'outil **Sequence Logo** pour obtenir ce graphique.
+
+![Sequence Logo](img/srna/sequence_logo.png "Sequence Logo")
+
+### Compter le nombre de séquences commençant par un U
+
+Pour finir vous allez compter le nombre de séquences commençant par U. POur cela vous utiliserez l'outil **Search in textfiles**.
+
+![Compter les U](img/srna/comptage_u.png "Compter les U")
+
 
 !!! hint "Question"
 
-	- Quel ratio d'augmentation des piRNA en contexte mutant obtenez-vous ?
+	Les petis ARN que vous avez sélectionnés sont-ils bien des piRNA ?
+
+
+
+
+
+
+
+
 
 
