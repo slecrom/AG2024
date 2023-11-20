@@ -6,24 +6,27 @@
 
 !!! attention "Objectif"
 
-	Le but de cette séance de Travaux Pratiques, est de regarder l’expression différentielle des transcrits en contexte mutant.
+	Le but de cette séance de Travaux Pratiques, est de regarder l’expression différentielle des transcrits en condition GLKD en comparaison avec la condition WT.
 
 !!! hint ""
 
-	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. Elles ne sont en aucun cas la base de l’évaluation de votre travail.
+	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. Les réponses que vous donnerez dans votre cahier seront aussi utilisées pour l’évaluation de votre travail.
 
-Vous allez partir de l'historique que vous avez créé mardi où se trouve les deux  collections des données de séquençage des ARN WT et SF ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2022/Loading_data_in_galaxy/#5-dataset-collections)).
+Vous allez partir de l'historique que vous avez créé mardi où se trouve les données de séquençage des ARN WT et GLKD ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2023/Loading_data_in_galaxy/#5-dataset-collections)).
+
+Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller travailler dans le [tableau partagé accessible en ligne](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
 
 
 --------------------------------------------------------------------------------
 ## Contrôle qualité des lectures
 
-Comme dans la partie sur les [petits ARN](./srna.md#controle-qualite-des-lectures), regardez les résultats du contrôle de qualité effectué par FastQC sur les fichiers fastq pour les 2 collections.
+Comme dans la partie sur les [petits ARN](./srna.md#controle-qualite-des-lectures), regardez les résultats du contrôle de qualité effectué par FastQC sur les fichiers fastq pour les 2 échantillons.
+
+Reportez le "nombre lectures totales" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
+
 
 !!! hint "Questions"
 
-	- Combien de lectures avez-vous dans vos fichiers ?
-	- Quelle est la version du format fastq utilisée ?
 	- Les lectures sont-elles de bonne qualité pour poursuivre vos analyses ?
 	- Pouvez-vous observer des biais particuliers à prendre en compte pour la suite ?
 
@@ -31,48 +34,51 @@ Comme dans la partie sur les [petits ARN](./srna.md#controle-qualite-des-lecture
 --------------------------------------------------------------------------------
 ## Alignement des lectures sur le génome de la drosophile
 
-Vous allez utiliser bowtie pour réaliser l’alignement des lectures obtenues sur le génome de la drosophile mais le but ici est d’obtenir plus de lectures qui s’alignent car les fragments sont plus longs que pour les petits ARN.
+Vous allez utiliser bowtie pour réaliser l’alignement des lectures obtenues sur le génome de la drosophile. Le but ici est d’obtenir plus de lectures qui s’alignent car les fragments sont plus longs que pour les petits ARN.
 
 [Documentation du logiciel bowtie](http://bowtie-bio.sourceforge.net/manual.shtml)
 
 !!! hint "Question"
 
-	- Quels sont les paramètres et les options que vous choisiriez ?
+	- Quels sont les paramètres et les options que vous choisiriez pour obtenir le plus de lectures qui s'alignent afin de compter le nombre de transcrits en évitant les ambiguïtés ?
 
 
 ### Test des paramètres d'alignement
 
-Ouvrez le [tableau Google Sheet](https://docs.google.com/spreadsheets/d/1Cxe_UCjYfFXXRGcaMgyTm_m6uJrKGDy_UYKGS4K-EZM/) dans une nouvelle fenêtre de votre navigateur. Rendez-vous dans l'onglet "Test alignement RNAseq".
+Ouvrez le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=871313255) dans une nouvelle fenêtre de votre navigateur. Rendez-vous dans l'onglet "Test alignement RNAseq".
 
-Choisissez vos paramètres de mapping **à l'exclusion de -n ou -v avec 3 mismatch, et de l'option -a**. Sélectionnez des paramètres différents de ceux des autres. Indiquez les sur la ligne du tableau qui commence par votre prénom. 
+Indiquez votre prénom sur la ligne des paramètres de mapping que vous voulez tester.
 
-Récupérez le fichier fastq de l'échantillon *SF2* depuis l'historique "RNA dataset". Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
+Récupérez le fichier fastq de l'échantillon *Test Mapping* depuis l'historique "RNA dataset". Reportez vous aux [annexes](./annexes.md) pour savoir comment copier les données entre historiques.
 
-Nous allons utiliser l’outil ***Map with Bowtie for Illumina*** sur les données brutes de l'échantillon *SF2* en alignant les lectures sur le génome de référence de la drosophile pour tester différents paramètres d'alignement. Pour sélectionner un élément d'une collection il faut cliquer sur l'icône en forme de dossier au bout de la ligne de choix du fichier fastq.
+Vous allez utiliser l’outil ***Map with Bowtie for Illumina*** sur les données brutes de l'échantillon *Test Mapping* en alignant les lectures sur le génome de référence de la drosophile pour tester différents paramètres d'alignement.
 
 En cas de soucis d'affichage des données en entrée de l'outil Bowtie, reportez vous aux [annexes](./annexes.md) pour savoir comment changer le type des données.
 
 ![Alignement avec Bowtie](img/rna/bowtie1.png "Alignement avec Bowtie")
 
-Une fois l'alignement effectué, indiquez le nombre et le pourcentage de lectures alignées et le temps mis par le programme à s'exécuter dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1Cxe_UCjYfFXXRGcaMgyTm_m6uJrKGDy_UYKGS4K-EZM/).
+Une fois l'alignement effectué, indiquez le nombre, le pourcentage de lectures alignées et le temps mis par le programme à s'exécuter dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=871313255).
+
+!!! hint "Question"
+
+	- Suite à ces tests quels sont les paramètres que vous allez choisir pour aligner vos échantillons ?
 
 
-### Alignements des lectures des réplicats SF et WT
+### Alignements des lectures des échantillons GLKD et WT
 
 Maintenant que vous avez déterminé les options qui vous paraissent les plus pertinentes à utiliser, lancez l’alignement de votre collection de fichier fastq à l'aide de l’outil ***Map with Bowtie for Illumina***.
 
 ![Alignement avec Bowtie](img/rna/bowtie2.png "Alignement avec Bowtie")
 
-!!! hint "Questions"
-
-	- Combien d’alignements avez-vous trouvés ?
-	- Combien de lectures n’ont pas été alignées ?
+Reportez le "nombre d'alignements" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
 
 
 --------------------------------------------------------------------------------
 ## Conversion des fichiers SAM
 
-Vous allez effectuer la conversion des fichiers SAM en BAM en éliminant les lectures qui ne se sont pas alignées, puis trier les alignements suivant les coordonnées chromosomiques du génome de référence. Pour cela vous allez utiliser l’outil ***Samtools view***.
+Vous allez effectuer la conversion des fichiers SAM en BAM en éliminant les lectures qui ne se sont pas alignées, puis en triant les alignements suivant les coordonnées chromosomiques du génome de référence. Cette étape permet non seulement de réduire la taille du fichier d'alignement mais aussi de faciliter sa lecture par les navigateurs de génome (Genome Browser).
+
+Pour cela vous allez utiliser l’outil ***Samtools view***.
 
 ![Conversion et filtrage SAM](img/rna/sam-filter-bam.png "Conversion et filtrage SAM")
 
@@ -82,26 +88,20 @@ Vous allez effectuer la conversion des fichiers SAM en BAM en éliminant les lec
 
 Afin de déterminer la couverture en lectures de chacun des gènes de la drosophile, vous allez utiliser l’outil **featureCounts** dont la [documentation est disponible en ligne](https://www.rdocumentation.org/packages/Rsubread/versions/1.22.2/topics/featureCounts).
 
-Mais avant vous devez copier le fichier d’annotation du génome de la Drosophile (dmel-all-r6.18.gtf) depuis l'historique "References" comme précédemment.
+Mais avant vous devez copier le fichier d’annotation du génome de la Drosophile au format GTF depuis l'historique "References" comme précédemment.
 
-!!! note "Le format GFF"
+!!! note "Le format GTF/GFF"
 
-	Le format GFF est un format de fichier standard utilisé pour stocker les informations d’annotation d’un génome dans un fichier texte. GFF signifie Generic Feature Format. Les fichiers GFF sont des fichiers tabulés de 9 colonnes contenant du texte simple. [Les spécifications détaillées de ce format sont disponibles en ligne](https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md).
+	Le format GTF/GFF est un format de fichier standard utilisé pour stocker les informations d’annotation d’un génome dans un fichier texte. GTF signifie Generic Transfer Format. Les fichiers GTF sont des fichiers tabulés de 9 colonnes contenant du texte simple. [Les spécifications détaillées de ce format sont disponibles en ligne](https://www.ensembl.org/info/website/upload/gff.html).
 
-Le décompte des alignements va se faire sur le fichier BAM filtré et trié que vous avez généré à l’étape précédente. Pour cela vous utiliserez l’outil ***featureCounts*** installé dans Galaxy en sélectionnant "Stranded (Forward)". 
+Le décompte des alignements va se faire sur le fichier BAM filtré et trié que vous avez généré à l’étape précédente. Pour cela vous utiliserez l’outil ***featureCounts*** installé dans Galaxy en sélectionnant "Stranded (Reverse)". 
 
 ![featureCounts](img/rna/featurecounts.png "featureCounts")
 
 !!! hint "Questions"
 
-	- Quel est le pourcentage des éléments dont le comptage est à 0 ?
-	- Quelle est la distribution des mesures de couverture obtenue ?
-	- Mesurez la moyenne, la médiane et les quartiles de cette distribution ?
+Reportez le "nombre de lectures comptées" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
 
-
-### Utilisation d'un workflow
-
-Pour répondre aux questions précédentes, utilisez le [workflow disponible en ligne](https://raw.githubusercontent.com/ARTbio/AnalyseGenome/main/Exercises/Galaxy-Workflow-Table_and_statistics.ga) et suivez le tutoriel de mardi sur [la façon d'utiliser les workflows](https://artbio.github.io/startbio/AnalyseGenomes_2022/Run_workflow/) et d'[installer les outils dans Galaxy qui vous manquent](https://artbio.github.io/startbio/AnalyseGenomes_2022/Preparing_reference/#a-simplify-fasta-headers).
 
 --------------------------------------------------------------------------------
 ## Analyse différentielle
@@ -109,6 +109,10 @@ Pour répondre aux questions précédentes, utilisez le [workflow disponible en 
 Vous allez maintenant comparer les niveaux d’expression des gènes entre vos 2 conditions à l’aide des 3 réplicats de chaque condition. Pour cela vous devez d’abord récupérer les fichiers de comptage des autres échantillons qu’il vous manque.
 
 Reportez vous aux [annexes](./annexes.md) pour savoir comment partager des données entre serveurs Galaxy.
+
+!!! danger "Attention"
+
+	Pour que l'analyse fonctionnelle marche, vous devez récupérer les résultats de comptage dont l'alignement a été effectué avec les paramètres que les votre. Si vous ne le faite pas vous risquez une confusion des effets au moment de l'analyse statistique.
 
 Ensuite vous allez utiliser l’outil ***DESeq2*** pour effectuer l’analyse différentielle. Il se base sur le [package R DESeq2](http://bioconductor.org/packages/release/bioc/html/DESeq2.html).
 
@@ -135,10 +139,11 @@ Un [tutoriel](https://training.galaxyproject.org/training-material/topics/transc
 
 Par exemple voici comment visualiser sur le volcano plot la liste des gènes cibles des amorces que vous avez utilisés en qPCR.
 
-Comme vous l'avez fait pour [la liste des chromosomes de la drosophile](https://artbio.github.io/startbio/AnalyseGenomes_2022/Preparing_reference/#a-simplify-fasta-headers), créez la liste des noms de gènes cibles de vos amorces de qPRC dans votre historique Galaxy. Appelez la "cibles_pcr". Indiquez "tabular" pour type de données.
+Comme vous l'avez fait pour [la liste des chromosomes de la drosophile](https://artbio.github.io/startbio/AnalyseGenomes_2023/Preparing_reference/#a-simplify-fasta-headers), créez la liste des noms de gènes cibles de vos amorces de qPRC dans votre historique Galaxy. Appelez la "cibles_pcr". Indiquez "tabular" pour type de données.
 
 Voici la liste des gènes
 ```
+Gene identifier
 FBgn0011761
 FBgn0004400
 FBgn0037703
@@ -153,12 +158,5 @@ Relancez l'outil ***Volcano Plot*** avec les réglages ci-dessous.
 
 ![Volcano plot](img/rna/volcano_result2.png "Volcano result")
 
-
---------------------------------------------------------------------------------
-## Bonus : obtenir une vue d'ensemble des données
-
-L'outil **[MultiQC](https://multiqc.info/)** permet de regrouper les résultats des analyses bioinformatiques portant sur de nombreux échantillons dans un seul rapport.
-
-![MultiQC](img/rna/multiqc.png "MultiQC")
 
 

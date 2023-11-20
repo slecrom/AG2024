@@ -2,7 +2,7 @@
 
 !!! attention "Objectif"
 
-	Le but d'utiliser IGV c'est de vous permettre de visualiser vos résultats dans un navigateur de génome. Cet outil peut non seulement afficher le génome et son annotation mais aussi de nombreuses données basées sur leurs coordonnées génomiques.
+	Le but d'utiliser IGV est de vous permettre de visualiser vos résultats dans un navigateur de génome (Genome Browser). Cet outil peut non seulement afficher le génome et son annotation mais aussi de nombreuses données basées sur leurs coordonnées génomiques.
 	
 La documentation d'Integrative Genomics Viewer (IGV) est [accessible en ligne](https://software.broadinstitute.org/software/igv/).
 
@@ -14,7 +14,7 @@ IGV se lance en ouvrant un terminal et en indiquant le chemin vers le logiciel :
 --------------------------------------------------------------------------------
 ## Récupérez vos données depuis le serveur Galaxy
 
-Vous allez utiliser IGV en local sur votre machine. Il vous faut récupérer un certain nombre de fichier depuis votre serveur Galaxy. Pour cela vous devez cliquez sur l'icône en forme de disquette.
+Vous allez utiliser IGV en local dans votre VM sur les machines de la salle du cours. Il vous faut donc récupérer un certain nombre de fichiers depuis votre serveur Galaxy. Pour cela vous devez cliquez sur l'icône en forme de disquette.
 
 !!! danger "Attention"
 
@@ -23,17 +23,17 @@ Vous allez utiliser IGV en local sur votre machine. Il vous faut récupérer un 
 
 Les fichiers à télécharger sont les suivants :
 
-- Le génome de la *drosophile* au format fasta : dmel-MAIN-chromosome-r6.18.fasta
+- Le génome de la *drosophile* au format fasta : dmel-MAIN-chromosome-r6.54.fasta
 - Le fichier d'annotation au format gtf : dmel-all-r6.18.gtf
-- Les fichiers bam filtrés, triés et leurs index d'un des fichiers SF et d'un des fichiers WT : SF1.bam, SF1.bai, WT1.bam, WT1x.bai
+- Les fichiers bam filtrés, triés et leurs index d'un des fichiers SF et d'un des fichiers WT : ALBA4.bam, ALBA4.bai, ALBA1.bam, ALBA1.bai
 
 !!! danger "Attention"
 
-	Pour ces derniers les deux fichiers sont dans le même jeu de données. Il faut bien récupérer les deux, le jeux de données (.bam) et l'index (.bai).
+	Pour les fichiers bam filtrés, les deux fichiers sont dans le même jeu de données. Il faut bien récupérer les deux, le jeux de données (.bam) et l'index (.bai).
 
 ![Télécharger les fichiers bam](img/igv/galaxy_download.png "Télécharger les fichiers bam")
 
-Vous pouvez renommer les fichiers fasta et gtf pour leur donner des noms plus courts (exemple : dmel-r6.18.xxx). Ils seront plus lisibles dans IGV.
+Vous pouvez renommer les fichiers fasta et gtf pour leur donner des noms plus courts (exemple : dmel-r6.54.xxx). Ils seront plus lisibles dans IGV.
 
 
 --------------------------------------------------------------------------------
@@ -57,7 +57,7 @@ Sauvegardez votre session.
 --------------------------------------------------------------------------------
 ## Importer vos données
 
-IGV vous permet de visualiser un grand nombre de types de données. À chaque type correspond un ou des formats de fichiers. Les annotations peuvent être en gff, gtf ou bed, les données quantitatives doivent être au format wig, les données d'alignement doivent être en sam ou en bam. La description précise de chacun des types de fichiers supportés est [disponible sur le site d'IGV](http://www.broadinstitute.org/software/igv/FileFormats).
+IGV vous permet de visualiser un grand nombre de types de données. À chaque type correspond un ou des formats de fichiers. Les annotations peuvent être en gff, gtf ou bed, les données quantitatives doivent être au format wig, les données d'alignement doivent être en sam ou en bam. La description précise de chacun des types de fichiers supportés est [disponible sur le site d'IGV](https://igv.org/doc/desktop/#FileFormats/DataTracks/).
 
 Si vos fichiers sont correctement formatés, vous pouvez directement importer vos données dans votre session IGV. Il suffit d'aller dans le menu "File" et choisir "Load from File".
 

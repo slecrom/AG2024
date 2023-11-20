@@ -12,7 +12,8 @@
 
 Vous allez partir de l'histoire que vous avez créé hier où se trouve les données de séquençage des petits ARN WT et GLKD ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2023/Loading_data_in_galaxy/#5-dataset-collections)).
 
-Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller travailler dans le [tableau partagé accessible en ligne](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller travailler dans le [tableau partagé accessible en ligne](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=243437883).
+
 
 --------------------------------------------------------------------------------
 ## Contrôle qualité des lectures
@@ -31,7 +32,7 @@ Si aucune image ne s'affiche, rendez-vous dans les [annexes](./annexes.md#resoud
 
 En vous aidant de la notice d’utilisation du logiciel, regardez les résultats du contrôle de qualité effectué par FastQC sur votre fichier fastq.
 
-Reportez le "nombre lectures totales" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+Reportez le "nombre lectures totales" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=243437883).
 
 !!! hint "Questions"
 
@@ -44,7 +45,7 @@ Reportez le "nombre lectures totales" et le "%GC" dans le [tableau partagé](htt
 
 Les séquences obtenues sont plus longues que celles des petits ARN que l’on veut étudier. Elles contiennent donc les séquences des adaptateurs situées en 3’. Vous allez réaliser une étape de **clipping** qui consiste à supprimer les adaptateurs présents dans les séquences.
 
-Vous allez également profiter de cette étape pour ne conserver que les séquences de tailles comprises entre 18 et 30, celles correspondants aux différentes populations de petits ARN que nous voulons étudier.
+Vous allez également profiter de cette étape pour ne conserver que les séquences de tailles comprises entre 19 et 30, celles correspondants aux différentes populations de petits ARN que nous voulons étudier.
 
 Vous allez pour cela utiliser l’outil ***Clip adapter***. Les réglages à modifier sont entourés en rouge sur la copie d'écran ci-dessous.
 
@@ -52,7 +53,7 @@ Vous allez pour cela utiliser l’outil ***Clip adapter***. Les réglages à mod
 
 Sur les fichiers fastq obtenus en sortie de cette étape de clipping, relancez une analyse de la qualité des séquences avec l’outil ***FastQC***.
 
-Reportez le "nombre lectures 18-30nt" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+Reportez le "nombre lectures 18-30nt" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=243437883).
 
 
 !!! hint "Questions"
@@ -65,6 +66,7 @@ Vous avez la possibilité de renommer les collections en cliquant sur l'une d'en
 
 ![Renommer une collection](img/srna/rename_collection.png "Renommer une collection")
 --->
+
 
 --------------------------------------------------------------------------------
 ## Filtrage des contaminants
@@ -117,7 +119,7 @@ Sur les fichiers fastq obtenus en sortie de ce filtrage, relancez une analyse de
 
 N'oubliez pas de renommer chaque étape dans l'histoire Galaxy pour vous y retrouver plus facilement.
 
-Reportez le "nombre de lectures nettoyées" et leur "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+Reportez le "nombre de lectures nettoyées" et leur "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=243437883).
 
 Reportez également le nombre de lectures alignées à chaque étape du filtrage. Attention ! ces informations ne se trouvent pas dans l'histoire. Pour les obtenir il faut aller dans le menu "Workflow" et en cliquant sur le workflow "sRNA clean-up" choisir "invocations"
 
@@ -134,6 +136,7 @@ La sortie standard et l’erreur standard sont accessibles dans Galaxy. Pour cel
 
 ![Sortie et erreur standard](img/srna/sortie_standard.png "Sortie et erreur standard")
 --->
+
 
 --------------------------------------------------------------------------------
 ## Alignement des lectures sur la région *PLacZ*
@@ -159,13 +162,14 @@ Lancez l’alignement une fois que vous avez déterminé les paramètres optimau
 
 Vous allez maintenant comparer la distribution des petits ARN sur PLacZ entre les conditions WT et GLKD.
 
-Vous allez réaliser des graphiques et quantifier la répartition des 2 types de petits ARN (siRNA et piRNA) alignés sur la séquence de PLacZ à partir des lectures de vos différents échantillons. Pour cela vous utiliserez l’outil ***small_rna_maps*** sur chacun de vos fichiers d’alignement en prenant soin d’indiquer pour chacun le facteur de normalisation permettant de corriger les lectures calculés dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+Vous allez réaliser des graphiques et quantifier la répartition des 2 types de petits ARN (siRNA et piRNA) alignés sur la séquence de PLacZ à partir des lectures de vos différents échantillons. Pour cela vous utiliserez l’outil ***small_rna_maps*** sur chacun de vos fichiers d’alignement en prenant soin d’indiquer pour chacun le facteur de normalisation permettant de corriger les lectures calculés dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=243437883).
 
 ![Distribution des lectures par taille](img/srna/small_rna_maps.png "Distribution des lectures par taille")
 
 !!! hint "Question"
 
 	- Quelle interprétation faites-vous des histogrammes que vous obtenez ?
+
 
 --------------------------------------------------------------------------------
 ## Obtention des piRNA
@@ -178,7 +182,7 @@ Les séquences de piRNA sont comprises entre 23 et 29 nucéotides. Vous allez r�
 
 Sur les fichiers fastq obtenus en sortie de cette étape, relancez une analyse de la qualité des séquences avec l’outil ***FastQC*** afin de vous assurer que tout c'est passé comme vous l'attendiez.
 
-Reportez le "nombre de lectures 23-29nt" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+Reportez le "nombre de lectures 23-29nt" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=243437883).
 
 ### Conserver les piRNA "uniques"
 
@@ -201,7 +205,8 @@ Lancez l’alignement une fois que vous avez déterminé les paramètres optimau
 
 Sur les fichiers fastq des piRNA uniques relancez une analyse de la qualité des séquences avec l’outil ***FastQC***.
 
-Reportez le "nombre de lectures piRNA uniques" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/).
+Reportez le "nombre de lectures piRNA uniques" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=243437883).
+
 
 --------------------------------------------------------------------------------
 ## Analyse des piRNA uniques
