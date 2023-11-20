@@ -70,7 +70,7 @@ Maintenant que vous avez déterminé les options qui vous paraissent les plus pe
 
 ![Alignement avec Bowtie](img/rna/bowtie2.png "Alignement avec Bowtie")
 
-Reportez le "nombre d'alignements" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
+Reportez le "nombre d'alignements" et vos paramètres dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
 
 
 --------------------------------------------------------------------------------
