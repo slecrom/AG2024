@@ -52,7 +52,7 @@ Il est possible que les sorties de certains outils ne s'affichent pas dans Galax
 Pour les afficher il faut les autoriser spécifiquement :
 
 1. Aller dans le menu "Admin"
-2. Puis "Tool Management" et choisir "Gérer la liste autorisée d'outils graphiques"
+2. Dans le menu de gauche, dans la partie "Tool Management", choisir "Manage Allowlist"
 3. Rechercher "FastQC" dans la liste, cliquer sur n'importe quelle case de la ligne. Elle va disparaître et s'afficher dans l'onglet "HTML Rendered"
 
 ![Whitelist](img/annexes/whitelist.png "Autoriser l'affichage HTML")
@@ -61,15 +61,15 @@ Ce système protège l'injection de code dans les pages HTML.
 
 
 --------------------------------------------------------------------------------
-## Copier des fichiers entre historiques
+## Copier des fichiers entre histoires
 
-Pour utiliser dans votre historique actuel un fichier situé dans un autre historique il faut procéder de la façon suivante :
+Pour utiliser dans votre histoire actuel un fichier situé dans un autre histoire il faut procéder de la façon suivante :
 
 1. Choisir "Copier les jeux de données" depuis le menu "roue crantée" en haut à droite
-2. Sélectionner les fichiers qui vous intéressent depuis l'historique source vers l'historique de destination, vous pouvez aussi indiquer le nom d'un nouvel historique
+2. Sélectionner les fichiers qui vous intéressent depuis l'histoire source vers l'histoire de destination, vous pouvez aussi indiquer le nom d'une nouvelle histoire
 3. Cliquez sur "Copy History Items"
 
-![Copie entre historiques](img/annexes/data_copie.png "Copie de données entre historiques")
+![Copie entre histoires](img/annexes/history_copie.png "Copie de données entre histoires")
 
 
 --------------------------------------------------------------------------------
