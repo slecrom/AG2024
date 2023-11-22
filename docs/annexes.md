@@ -1,4 +1,4 @@
-# 4. Annexes
+# 5. Annexes
 
 Cette page regroupe différentes solutions utilisées dans Galaxy au cours des travaux pratiques 
 

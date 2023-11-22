@@ -5,7 +5,8 @@
 1. [Traitement des données des petits ARN](./srna.md)
 2. [Traitement des données de RNA-seq](./rnaseq.md)
 3. [Visualisation des résultats obtenus](./igv.md)
-4. [Annexes](./annexes.md)
+4. [Données ressources](./ressources.md)
+5. [Annexes](./annexes.md)
 
 Pour réaliser ces analyses nous allons utiliser l’outil Galaxy. Il s’agit d’une plateforme basée sur un système de serveur Web ouvert sur lequel vous pouvez effectuer en ligne un certain nombre de traitements sur vos données. Le projet Galaxy dispose d’un [site principal](https://usegalaxy.org/).
 
