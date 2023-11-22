@@ -2,6 +2,7 @@
 
 Cette page regroupe différentes solutions utilisées dans Galaxy au cours des travaux pratiques 
 
+<!---
 
 --------------------------------------------------------------------------------
 ## Commandes du programme screen
@@ -27,6 +28,7 @@ Commandes utiles :
 
 Au redémarrage d'une machine virtuelle (VM) suspendue, on retrouve Galaxy dans l'état où il était lors de sa suspension. À noter cependant que si on suspend la VM au milieu d'un job Galaxy en exécution cela mettra le job en question en erreur.
 
+-->
 
 --------------------------------------------------------------------------------
 ## Modifier le type des données
