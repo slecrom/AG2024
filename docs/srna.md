@@ -14,6 +14,7 @@ Vous allez partir de l'histoire que vous avez créé hier où se trouve les donn
 
 Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller travailler dans le [tableau partagé accessible en ligne](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=243437883).
 
+Les librairies ont été générées à l'aide des [kits de préparation de petits ARN TruSeq d'Illumina](https://support.illumina.com/sequencing/sequencing_kits/truseq-small-rna-kit.html).
 
 --------------------------------------------------------------------------------
 ## Contrôle qualité des lectures
@@ -69,7 +70,26 @@ Reportez le "nombre lectures 19-30nt" et le "%GC" dans le [tableau partagé](htt
 	- L’étape de clipping a-t-elle bien réalisé ce que vous souhaitiez ?
 	- Que pensez-vous de la distribution de taille des séquences ?
 
+### Analyse des séquences surreprésentées
 
+Si vous avez envie de savoir d'où proviennent les séquences marquées comme "Overrepresented sequences" après cette étape. Vous pouvez effectuer un Blast contre le génome de la drosophile pour le savoir.
+
+Copiez la séquence la plus surreprésentée.
+
+![Séquence surreprésentée](img/srna/overrepresented_sequence.png "Séquence surreprésentée")
+
+Puis collez là dans l'outil [Blast de FlyBase](https://flybase.org/blast/).
+
+![Blast FlyBase](img/srna/blast.png "Blast FlyBase")
+
+Si l'annotation de la séquence cible n'est pas explicite, vous pouvez cliquer sur JBrowse pour le voir où se trouve le HSP (High-scoring Segment Pair) sur le génome.
+
+![Annotation](img/srna/blast_hsp.png "Annotation")
+
+
+!!! hint "Question"
+
+	- À votre avis à quoi correspond la séquence la plus surreprésentée que vous avez obtenue ?
 
 --------------------------------------------------------------------------------
 ## Filtrage des contaminants

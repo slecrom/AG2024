@@ -16,6 +16,7 @@ Vous allez partir de l'historique que vous avez créé où se trouve les donnée
 
 Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller travailler dans le [tableau partagé accessible en ligne](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
 
+Les librairies ont été préparées à l'aide du protocole [RNA RiboZero Stranded d'Illumina](https://support.illumina.com/sequencing/sequencing_kits/illumina-stranded-total-rna-ligation-ribo-zero-plus.html).
 
 --------------------------------------------------------------------------------
 ## Contrôle qualité des lectures
@@ -131,7 +132,7 @@ Ensuite vous allez utiliser l’outil ***DESeq2*** pour effectuer l’analyse di
 
 	Les fichiers qui sont dans vos collections ne sont pas visibles de la même façon que ceux qui vous avez récupérés. Il faut soit rendre visible vos échantillons dans vos collections soit supprimer la collection des comptages pour les faire apparaître.
 
-!!! hint
+!!! hint ""
 
 	Le mieux est de créer 2 collections "featureCounts", l'une pour les échantillons WT et l'autre pour les GLKD.
 
@@ -143,6 +144,10 @@ Vous devez indiquer à l’outil quels sont les échantillons à rattacher à ch
 !!! hint "Questions"
 
 	- L’étape d’analyse différentielle s’est elle bien déroulée ?
+
+!!! hint ""
+
+	Si vous avez envie d'aller plus loin avec la visualisation des données sur le MA-plot, l'[outil ggmaplot](https://rpkgs.datanovia.com/ggpubr/reference/ggmaplot.html) permet dans R d'afficher des annotations sur la graphique.
 
 
 ### Visualisation sous forme de volcano plot
