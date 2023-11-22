@@ -85,7 +85,7 @@ L’objectif de cette étape est de retirer de nos petits ARN certains élément
 
 Pour ce TP vous allez utiliser la version 6.54 du génome de *Drosophila melanogaster* dont les fichiers de séquence au format fasta sont accessibles sur le [site FTP de Flybase](https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.54_FB2023_05/fasta/)
 
-Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-historiques) pour savoir comment copier les données entre historiques des fichiers fasta dont vous avez besoin.
+Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-histoires) pour savoir comment copier les données entre historiques des fichiers fasta dont vous avez besoin.
 
 
 ### Choix des paramètres d'alignement
@@ -147,7 +147,7 @@ Les différents lancement du workflow qui ont été effectués apparaissent dans
 
 Pour aller plus loin dans l’analyse des loci producteurs de petits ARN, vous allez aligner spécifiquement les séquences que vous avez obtenues sur celle du transgène ***PLacZ***.
 
-Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-historiques) pour savoir comment copier les données entre historiques pour récupérer la séquence fasta de *PLacZ*.
+Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-histoires) pour savoir comment copier les données entre historiques pour récupérer la séquence fasta de *PLacZ*.
 
 Vous allez utiliser l’outil ***sR_bowtie*** sur les données nettoyées précédentes en alignant les lectures sur la séquence de *PLacZ*. On cherche maintenant à obtenir des alignements à 1 seule position sur la séquence même si ils peuvent s'aligner à plusieurs endroits.
 

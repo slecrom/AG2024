@@ -24,8 +24,8 @@ Vous allez utiliser IGV en local dans votre VM sur les machines de la salle du c
 Les fichiers à télécharger sont les suivants :
 
 - Le génome de la *drosophile* au format fasta : dmel-MAIN-chromosome-r6.54.fasta
-- Le fichier d'annotation au format gtf : dmel-all-r6.18.gtf
-- Les fichiers bam filtrés, triés et leurs index d'un des fichiers SF et d'un des fichiers WT : ALBA4.bam, ALBA4.bai, ALBA1.bam, ALBA1.bai
+- Le fichier d'annotation au format gtf : dmel-r6.54-gtf
+- Les fichiers bam filtrés, triés et leurs index des fichiers GLKD et WT que vos avez analysés, exmeple : ALBA4.bam, ALBA4.bai, ALBA1.bam, ALBA1.bai
 
 !!! danger "Attention"
 
@@ -103,30 +103,4 @@ Tous vos paramètres d'échelle, de couleurs, les chemins vers les données que 
 !!! danger "Attention"
 
 	Ne mettez pas d'accents ou de caractères spéciaux dans les annotations que vous utiliserez, ainsi que dans votre arborescence de fichiers. IGV va enregistrer votre session en encodant vos caractères spéciaux mais ne sera plus capable de s'y retrouver quand vous souhaiterez rouvrir une session ainsi sauvegardée. 
-
---------------------------------------------------------------------------------
-## Ressources
-
-
-### Amorces de qPCR
-
-Vous pouvez visualiser les amorces que vous avez utilisé lors de vos quantifications par qPCR dans IGV en téléchargeant le fichier [PCRprimers.gff](ressources/PCRprimers.gff).
-
-
-### Locus de piRNA
-
-Séquences fasta des piRNA clusters et du transgene lacZ cible.
-
-```
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=20A.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=38C_1.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=38C_2.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=38C_3.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=42AB.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=80F.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=flamenco.fasta 
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=PA92_TransgeneCible.fasta
-```
-
-Vous pouvez récupérer les coordonnées génomiques des piARN stockés sur la [piRNAdb](https://www.pirnadb.org/download/archive/gff_gtf) aux formats GTF et GFF.
 

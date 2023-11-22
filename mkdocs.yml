@@ -4,7 +4,8 @@ nav:
     - 1. Petits ARN: srna.md
     - 2. RNAseq: rnaseq.md
     - 3. IGV: igv.md
-    - 4. Annexes: annexes.md
+    - 4. Ressources: ressources.md
+    - 5. Annexes: annexes.md
 theme: readthedocs
 markdown_extensions:
     - admonition

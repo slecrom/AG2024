@@ -75,25 +75,44 @@ Pour utiliser dans votre histoire actuel un fichier situé dans un autre histoir
 --------------------------------------------------------------------------------
 ## Partage de fichiers dans Galaxy
 
-Pour partager un historique, il faut tout d'abord sélectionner « Partager et Publier » dans le menu de la roue crantée en haut à droite puis choisir « Make History Accessible ».
+### Isoler les données à partager dans une histoire dédidée
 
-![Partage d'historique](img/annexes/history_share.png "Partage d'historique")
+La première étape consiste à copier les données à partager dans une nouvelle histoire.
 
-Retournez de nouveau dans le menu de la roue crantée et cliquer sur « Exporter l’historique dans un fichier » dans le sous-menu « Télécharger ». Choisir "to a link" et cliquer sur "Click here to to generate a new archive for this history".
+![Nouvelle histoire](img/annexes/history_new.png "Nouvelle histoire")
+
+Sélectionnez cette nouvelle histoire, supprimez la collection, affichez les éléments invisibles et rendez-les visibles
+
+![Suppression d'une collection](img/annexes/history_collection_delete.png "Suppression d'une collection")
+![Affichage des éléments invisibles](img/annexes/history_unhidde.png "Affichage des éléments invisibles")
+
+Renommez vos éléments pour les rendre plus facile à trouver.
+
+### Partager votre histoire
+
+Pour partager votre histoire, il faut tout d'abord sélectionner « Partager et Publier » dans le menu d'option tout en haut à droite puis choisir « Make History Accessible ».
+
+![Partage d'historique](img/annexes/history_share1.png "Partage d'historique")
+![Partage d'historique](img/annexes/history_share2.png "Partage d'historique")
+
+Retournez de nouveau dans le menu en haut à droite, cliquez sur « Exporter l’historique dans un fichier » puis sur le lien "Click here to generate a new archive for this history".
 
 ![Export d'historique](img/annexes/history_export.png "Export d'historique")
 
-Il faut alors cliquer sur le lien qui s'affiche dans la partie centrale pour récupérer l'archive de l'historique (.tar.gz) en local.
+**Conserver ce lien car c'est lui qui vous permet de partager votre histoire avec d'autres serveurs Galaxy.** Vous pouvez aussi cliquer sur le lien pour récupérer l'historique en local. Attention les données génomiques peuvent être volumineuses !
 
 ![URL de l'historique](img/annexes/history_url.png "URL de l'historique")
 
-Pour importer un historique partagé, allez dans le menu "User" puis choisir "Histories". Cliquer sur "Import from file".
+### Importer une histoire partagée
 
-![Import d'historique](img/annexes/history_import.png "Import d'historique")
+Pour importer une histoire partagé, allez dans le menu "Utilisateur" puis choisir "Histories". Cliquez sur "Import history" en haut à droite.
 
-Sélectionnez "Upload local file from your computer", cliquez sur "Browse" pour choisir l'emplacement du fichier puis sur "Import history".
+![Import d'histoire](img/annexes/history_import.png "Import d'histoire")
 
-![Import d'historique](img/annexes/history_upload.png "Import d'historique")
+Sélectionnez "Export URL from another Galaxy instance" puis collez l'URL de l'histoire que vous voulez récupérer dans le champ "Archived History URL".
+
+![Import d'histoire](img/annexes/history_upload1.png "Import d'histoire")
+![Import d'histoire](img/annexes/history_upload2.png "Import d'histoire")
 
 Une fois importé, pensez à le renommer pour lui donner un nom plus explicite.
 
