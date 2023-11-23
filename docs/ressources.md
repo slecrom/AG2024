@@ -60,6 +60,25 @@ https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_RNAseqData/download?path=%
 
 Vous pouvez visualiser les amorces que vous avez utilisé lors de vos quantifications par qPCR dans IGV en téléchargeant le fichier [PCRprimers.gff](ressources/PCRprimers.gff).
 
+--------------------------------------------------------------------------------
+## ChIP-seq
+
+L'occupation de H3K9me2, H3K9me3 et Rhino (Rhi) a été déterminée par immunoprécipitation de la chromatine suivie de séquençage (ChIP-seq) à partir d'ovaires WT et d'ovaires Kdm3 GLKD.
+Les fichiers de couverture ci-dessous ont été obtenus à l'aide de l'outil [BamCompare](https://deeptools.readthedocs.io/en/develop/content/tools/bamCompare.html) (Deeptools Galaxy version 3.3.2.0.0)  avec une taille de bin de 100 pb et le calcul de la différence des lectures IP input en rpm.
+
+```
+H3K9me2
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_H3K9me2_Ctrl.bigwig
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_H3K9me2_Kdm3GLKD.bigwig
+H3K9me3
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_H3K9me3_Ctrl.bigwig
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_H3K9me3_Kdm3GLKD.bigwig
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&
+Rhino
+files=ChIPseq_Rhino_Ctrl.bigwig
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_Rhino_Kdm3GLKD.bigwig
+```
+
 
 --------------------------------------------------------------------------------
 ## Locus de piRNA
