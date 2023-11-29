@@ -44,7 +44,7 @@ Vous avez la possibilité de renommer les collections en cliquant sur l'une d'en
 
 ![Renommer une collection](img/srna/rename_collection.png "Renommer une collection")
 
-!!! hint
+!!! hint ""
 
 	Vous pouvez supprimer, en cliquant sur l'icône en forme de poubelle (choisissez "Collections and elements"), les données brutes "FastQC on collection : RawData" car elle ne fait que reprendre les données de la page web sous une forme texte et nous n'allons pas en avoir besoin durant le TP. 
 
@@ -180,7 +180,7 @@ Lancez l’alignement une fois que vous avez déterminé les paramètres optimau
 
 ![Alignement sur PLacZ](img/srna/bowtie_placz.png "Alignement sur PLacZ")
 
-!!! hint
+!!! hint ""
 
 	La sortie standard et l’erreur standard sont accessibles dans Galaxy. Pour cela vous devez cliquer dans votre jeu de données sur l’icône d’information (i). La page qui s’affiche vous donne accès aux paramètres de lancement de l’outil utilisé et aux différentes sorties produites.
 
@@ -194,7 +194,7 @@ Vous allez maintenant comparer la distribution des petits ARN sur PLacZ entre le
 
 Vous allez réaliser des graphiques et quantifier la répartition des 2 types de petits ARN (siRNA et piRNA) alignés sur la séquence de PLacZ à partir des lectures de vos différents échantillons. Pour cela vous utiliserez l’outil ***small_rna_maps*** sur chacun de vos fichiers d’alignement en prenant soin d’indiquer pour chacun le facteur de normalisation permettant de corriger les lectures calculés dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=243437883).
 
-!!! hint
+!!! hint ""
 
 	Vous pouvez accéder à un élément d'une collection en cliquant sur l'icône de dossier "Browse dataset" ouvert sur la droite du sélecteur de fichier.
 

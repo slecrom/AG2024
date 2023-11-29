@@ -82,7 +82,7 @@ Maintenant que vous avez déterminé les options qui vous paraissent les plus pe
 
 Reportez le "nombre d'alignements" et vos paramètres dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
 
-!!! hint
+!!! hint ""
 
 	Les paramètres de lancement du job sont accessibles dans Galaxy. Pour cela vous devez cliquer dans votre jeu de données sur l’icône d’information (i). La page qui s’affiche vous donne accès aux paramètres de lancement de l’outil utilisé.
 
