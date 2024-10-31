@@ -14,7 +14,7 @@
 
 Vous allez partir de l'historique que vous avez créé où se trouve les données de séquençage des ARN WT et GLKD ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2023/Loading_data_in_galaxy/#5-dataset-collections)).
 
-Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller travailler dans le [tableau partagé accessible en ligne](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
+Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller travailler dans le [tableau partagé accessible en ligne](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=418538100).
 
 Les librairies ont été préparées à l'aide du protocole [RNA RiboZero Stranded d'Illumina](https://support.illumina.com/sequencing/sequencing_kits/illumina-stranded-total-rna-ligation-ribo-zero-plus.html).
 
@@ -23,7 +23,7 @@ Les librairies ont été préparées à l'aide du protocole [RNA RiboZero Strand
 
 Comme dans la partie sur les [petits ARN](./srna.md#controle-qualite-des-lectures), regardez les résultats du contrôle de qualité effectué par FastQC sur les fichiers fastq pour les 2 échantillons.
 
-Reportez le "nombre lectures totales" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
+Reportez le "nombre lectures totales" et le "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=418538100).
 
 
 !!! hint "Questions"
@@ -46,7 +46,7 @@ Vous allez utiliser bowtie pour réaliser l’alignement des lectures obtenues s
 
 ### Test des paramètres d'alignement
 
-Ouvrez le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=871313255) dans une nouvelle fenêtre de votre navigateur. Rendez-vous dans l'onglet "Test alignement RNAseq".
+Ouvrez le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=871313255) dans une nouvelle fenêtre de votre navigateur. Rendez-vous dans l'onglet "Test alignement RNAseq".
 
 Indiquez votre prénom sur la ligne des paramètres de mapping que vous voulez tester.
 
@@ -61,17 +61,17 @@ En cas de soucis d'affichage des données en entrée de l'outil Bowtie, reportez
 ![Alignement avec Bowtie](img/rna/bowtie3.png "Alignement avec Bowtie")
 ![Alignement avec Bowtie](img/rna/bowtie4.png "Alignement avec Bowtie")
 
-Une fois l'alignement effectué, indiquez le nombre, le pourcentage de lectures alignées et le temps mis par le programme à s'exécuter dans l'[onglet "Test alignement RNAseq" du tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=871313255).
+Une fois l'alignement effectué, indiquez le nombre, le pourcentage de lectures alignées et le temps mis par le programme à s'exécuter dans l'[onglet "Test alignement RNAseq" du tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=871313255).
 
 !!! hint "Question"
 
 	- Suite à ces tests quels sont les paramètres que vous allez choisir pour aligner vos échantillons ?
 
-Reporter ces paramètres dans l'[onglet "ARN" du tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
+Reporter ces paramètres dans l'[onglet "ARN" du tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=418538100).
 
 !!! danger "Attention"
 
-	Vos paramètres doivent être identiques pour vos deux échantillons !
+	Les paramètres choisis doivent être identiques pour tous les échantillons !
 
 
 ### Alignements des lectures des échantillons GLKD et WT
@@ -80,7 +80,7 @@ Maintenant que vous avez déterminé les options qui vous paraissent les plus pe
 
 ![Alignement avec Bowtie](img/rna/bowtie_rna.png "Alignement avec Bowtie")
 
-Reportez le "nombre d'alignements" et vos paramètres dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
+Reportez le "nombre d'alignements" et vos paramètres dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=418538100).
 
 !!! hint ""
 
@@ -112,7 +112,7 @@ Le décompte des alignements va se faire sur le fichier BAM filtré et trié que
 
 ![featureCounts](img/rna/featurecounts.png "featureCounts")
 
-Reportez le "nombre de lectures comptées" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
+Reportez le "nombre de lectures comptées" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=418538100).
 
 
 --------------------------------------------------------------------------------

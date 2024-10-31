@@ -7,15 +7,15 @@ Cette section regroupe un ensemble de fichier ressources utiles pour le TP
 
 ### Genomic features
 
-Pour ce TP nous utiliserons la version 6.54 du génome de *Drosophila melanogaster* dont les fichiers de séquence au format fasta sont accessibles sur le [site FTP de Flybase](https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.54_FB2023_05/fasta/).
+Pour ce TP nous utiliserons la version 6.59 du génome de *Drosophila melanogaster* dont les fichiers de séquence au format fasta sont accessibles sur le [site FTP de Flybase](https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.59_FB2024_04/fasta/).
 La liste ci-dessous peut-être directement importée dans votre serveur Galaxy. 
 
 ```
-https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.54_FB2023_05/fasta/dmel-all-chromosome-r6.54.fasta.gz	dmel-r6.54-fasta
-https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.54_FB2023_05/fasta/dmel-all-miRNA-r6.54.fasta.gz	dmel-r6.54-miRNA
-https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.54_FB2023_05/fasta/dmel-all-miscRNA-r6.54.fasta.gz	dmel-r6.54-miscRNA
-https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.54_FB2023_05/fasta/dmel-all-tRNA-r6.54.fasta.gz	dmel-r6.54-tRNA
-https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.54_FB2023_05/gtf/dmel-all-r6.54.gtf.gz	dmel-r6.54-gtf
+https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.59_FB2024_04/fasta/dmel-all-chromosome-r6.59.fasta.gz	dmel-r6.59-fasta
+https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.59_FB2024_04/fasta/dmel-all-miRNA-r6.59.fasta.gz	dmel-r6.59-miRNA
+https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.59_FB2024_04/fasta/dmel-all-miscRNA-r6.59.fasta.gz	dmel-r6.59-miscRNA
+https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.59_FB2024_04/fasta/dmel-all-tRNA-r6.59.fasta.gz	dmel-r6.59-tRNA
+https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.59_FB2024_04/gtf/dmel-all-r6.59.gtf.gz	dmel-r6.59-gtf
 ```
 
 Séquence du transgène PLacZ
@@ -25,7 +25,7 @@ https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_GenomicFeatures/download?p
 
 ### Petits ARN
 
-La liste ci-dessous peut-être directement importée dans votre serveur Galaxy. Attention à ne sélectionner uniquement que les lignes correspondant aux deux échantillons sur lesquels vous allez travailler et qui sont indiqués dans le [tableau partagé dans l'onglet "petits ARN"](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=243437883).
+La liste ci-dessous peut-être directement importée dans votre serveur Galaxy. Attention à ne sélectionner uniquement que les lignes correspondant aux deux échantillons sur lesquels vous allez travailler et qui sont indiqués dans le [tableau partagé dans l'onglet "petits ARN"](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=243437883).
 
 ```
 GLKD
@@ -41,7 +41,7 @@ https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?p
 
 ### ARN
 
-La liste ci-dessous peut-être directement importée dans votre serveur Galaxy. Attention à ne sélectionner uniquement que les lignes correspondant aux deux échantillons sur lesquels vous allez travailler et qui sont indiqués dans le [tableau partagé dans l'onglet "ARN"](https://docs.google.com/spreadsheets/d/1y-uBdR2TVZUIbNjM-RPxKXeMFn0OD8izTTmc3xnEFjE/edit#gid=418538100).
+La liste ci-dessous peut-être directement importée dans votre serveur Galaxy. Attention à ne sélectionner uniquement que les lignes correspondant aux deux échantillons sur lesquels vous allez travailler et qui sont indiqués dans le [tableau partagé dans l'onglet "ARN"](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=418538100).
 
 ```
 GLKD
@@ -70,9 +70,11 @@ Les fichiers de couverture ci-dessous ont été obtenus à l'aide de l'outil [Ba
 H3K9me2
 https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_H3K9me2_Ctrl.bigwig
 https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_H3K9me2_Kdm3GLKD.bigwig
+
 H3K9me3
 https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_H3K9me3_Ctrl.bigwig
 https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_H3K9me3_Kdm3GLKD.bigwig
+
 Rhino
 https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_Rhino_Ctrl.bigwig
 https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_Rhino_Kdm3GLKD.bigwig
@@ -82,18 +84,24 @@ https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&
 --------------------------------------------------------------------------------
 ## Locus de piRNA
 
-Séquences fasta des piRNA clusters et du transgene lacZ cible.
+Séquences fasta des piRNA clusters et du transgene lacZ cible. La liste ci-dessous peut-être directement importée dans votre serveur Galaxy.
 
 ```
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=20A.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=38C_1.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=38C_2.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=38C_3.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=42AB.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=80F.fasta
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=flamenco.fasta 
-https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=PA92_TransgeneCible.fasta
+https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=20A.fasta	20A
+https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=38C_1.fasta	38C_1
+https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=38C_2.fasta	38C_2
+https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=38C_3.fasta	38C_3
+https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=42AB.fasta	42AB
+https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=80F.fasta	80F
+https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=flamenco.fasta	Flamenco
+https://psilo.sorbonne-universite.fr/index.php/s/AG_Ressources/download?path=%2F&files=PA92_TransgeneCible.fasta	PA92-TransgeneCible
 ```
 
 Vous pouvez récupérer les coordonnées génomiques des piARN stockés sur la [piRNAdb](https://www.pirnadb.org/download/archive/gff_gtf) aux formats GTF et GFF.
+
+Fichiers des séquences des 142 piRNA clusters
+
+```
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_GenomicFeatures/download?path=%2F&files=Dmel_piRNA_clusters.fa.gz piRNA-clusters
+```
 
