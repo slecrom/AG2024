@@ -25,7 +25,7 @@ Les librairies ont été générées à l'aide des [kits de préparation de peti
 
 Dans Galaxy vous allez utiliser l’outil ***FastQC Read Quality reports***. Pensez à cliquer sur l'icône en forme de dossier pour accéder à votre collection.
 
-Cliquez sur "Execute" sans modifier les paramètres.
+Cliquez sur "Run tool" sans modifier les paramètres.
 
 ![FastQC](img/srna/fastqc.png "FastQC")
 
@@ -44,7 +44,7 @@ Vous avez la possibilité de renommer les collections en cliquant sur l'une d'en
 
 ![Renommer une collection](img/srna/rename_collection.png "Renommer une collection")
 
-!!! hint ""
+!!! note ""
 
 	Vous pouvez supprimer, en cliquant sur l'icône en forme de poubelle (choisissez "Collections and elements"), les données brutes "FastQC on collection : RawData" car elle ne fait que reprendre les données de la page web sous une forme texte et nous n'allons pas en avoir besoin durant le TP. 
 
@@ -103,10 +103,7 @@ L’objectif de cette étape est de retirer de nos petits ARN certains élément
 - miscRNA : small nuclear RNA (snRNA), small nucleolar RNA (snoRNA), et ARN ribosomique (rRNA)
 - tRNA : ARN de transferts
 
-Pour ce TP vous allez utiliser la version 6.54 du génome de *Drosophila melanogaster* dont les fichiers de séquence au format fasta sont accessibles sur le [site FTP de Flybase](https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.54_FB2023_05/fasta/)
-
-Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-histoires) pour savoir comment copier les données entre historiques des fichiers fasta dont vous avez besoin.
-
+Pour ce TP vous allez utiliser la version 6.59 du génome de *Drosophila melanogaster* dont les fichiers de séquence au format fasta sont accessibles sur le [site FTP de Flybase](https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.59_FB2024_04/fasta/)
 
 ### Choix des paramètres d'alignement
 
@@ -131,9 +128,9 @@ Nous allons utiliser l’outil ***sR_bowtie*** de Galaxy sur les données clipp�
 
 Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-histoires) pour savoir comment copier les données depuis l'histoire "References" dans celle en cours pour récupérer les séquences fasta suivantes :
 
-- miRNA : dmel-r6.54-miRNA
-- miscRNA : dmel-r6.54-miscRNA
-- tRNA : dmel-r6.54-tRNA
+- miRNA : dmel-r6.59-miRNA
+- miscRNA : dmel-r6.59-miscRNA
+- tRNA : dmel-r6.59-tRNA
 
 ### Utilisation d'un workflow
 
