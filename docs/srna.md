@@ -142,6 +142,10 @@ Le workflow "sRNA clean-up" que vous allez utiliser est disponible [en cliquant 
 
 Aidez-vous du tutoriel [Running a galaxy workflow](https://artbio.github.io/startbio/AnalyseGenomes_2023/Run_workflow/) que vous avez vu hier et lancez le workflow sur les données clippées.
 
+!!! danger "Attention"
+
+	Les deux icônes de choix des données sont identiques. Il faut choisir "Multiple collection" et pas "Dataset collection" ! L'icône de droite.
+
 ![Run sRNA clean-up workflow](img/srna/run_cleanup_workflow.png "Run sRNA clean-up workflow")
 
 Sur les fichiers fastq obtenus en sortie de ce filtrage, relancez une analyse de la qualité des séquences avec l’outil ***FastQC***.
@@ -150,11 +154,11 @@ N'oubliez pas de renommer chaque étape dans l'histoire Galaxy pour vous y retro
 
 Reportez le "nombre de lectures nettoyées" et leur "%GC" dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=243437883).
 
-Reportez également le nombre de lectures alignées à chaque étape du filtrage. Attention ! ces informations ne se trouvent pas dans l'histoire. Pour les obtenir il faut aller dans le menu "Workflow" et en cliquant sur le workflow "sRNA clean-up" choisir "invocations"
+Reportez également le nombre de lectures alignées à chaque étape du filtrage. Attention ! ces informations ne se trouvent pas dans l'histoire. Pour les obtenir il faut cliquer sur l'icône "Workflow invocations" dans la barre de gauche.
 
 ![Workflow invocations](img/srna/workflow_invocations.png "Workflow invocations")
 
-Les différents lancement du workflow qui ont été effectués apparaissent dans une nouvelle fenêtre. Affichez les détails d'un lancement en cliquant sur le chevron en début de ligne puis sur les onglets "Details" puis "Steps". Cliquez ensuite sur les réglages de l'étape qui vous intéresse (icône en forme d'outil) puis sur "Output Dataset Collections", sur "Bowtie output" et enfin sur l'échantillon que vous voulez analyser. En déployant les résultats vous pouvez accéder pour vos échantillons aux sorties de l'outil d'alignement Bowtie.
+Les différents lancement du workflow qui ont été effectués apparaissent dans une liste. Affichez les détails d'un lancement en cliquant sur l'élément de la liste qui vous intéresse. Cachez le graphique du workflow pour mieux visualiser ses étapes en cliquant sur le bouton "Hide graph". Sélectionnez ensuite l'étape qui vous intéresse puis sur "Output Dataset Collections", sur "Bowtie output" et enfin sur l'échantillon que vous voulez analyser. En déployant les résultats vous pouvez accéder pour vos échantillons aux sorties de l'outil d'alignement Bowtie.
 
 ![Workflow output](img/srna/workflow_output.png "Workflow output selection")
 
