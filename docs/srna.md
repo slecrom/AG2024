@@ -177,7 +177,7 @@ Lancez l’alignement une fois que vous avez déterminé les paramètres optimau
 
 ![Alignement sur PLacZ](img/srna/bowtie_placz.png "Alignement sur PLacZ")
 
-!!! hint ""
+!!! note ""
 
 	La sortie standard et l’erreur standard sont accessibles dans Galaxy. Pour cela vous devez cliquer dans votre jeu de données sur l’icône d’information (i). La page qui s’affiche vous donne accès aux paramètres de lancement de l’outil utilisé et aux différentes sorties produites.
 
@@ -189,11 +189,15 @@ Lancez l’alignement une fois que vous avez déterminé les paramètres optimau
 
 Vous allez maintenant comparer la distribution des petits ARN sur PLacZ entre les conditions WT et GLKD.
 
-Vous allez réaliser des graphiques et quantifier la répartition des 2 types de petits ARN (siRNA et piRNA) alignés sur la séquence de PLacZ à partir des lectures de vos différents échantillons. Pour cela vous utiliserez l’outil ***small_rna_maps*** sur chacun de vos fichiers d’alignement en prenant soin d’indiquer pour chacun le facteur de normalisation permettant de corriger les lectures calculés dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=243437883).
+Vous allez réaliser des graphiques et quantifier la répartition des 2 types de petits ARN (siRNA et piRNA) alignés sur la séquence de PLacZ à partir des lectures de vos différents échantillons. 
 
-!!! hint ""
+La première étape consiste à extraire les deux alignements que vous avez obtenus à l'étape précédente de la collection où ils se trouvent.
 
-	Vous pouvez accéder à un élément d'une collection en cliquant sur l'icône de dossier "Browse dataset" ouvert sur la droite du sélecteur de fichier.
+Pour cela, utiliser l'outil "Extract dataset" en sélectionnant les 2 fichiers d'alignement l'un après l'autre grâce à leur numéro d'index dans la collection.
+	
+![Accéder aux éléments d'une collection](img/srna/browse_collection.png "Accéder aux éléments d'une collection")
+
+Puis vous utiliserez l’outil ***small_rna_maps*** sur chacun de vos fichiers d’alignement en prenant soin d’indiquer pour chacun le facteur de normalisation permettant de corriger les lectures calculés dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=243437883). 
 
 ![Distribution des lectures par taille](img/srna/small_rna_maps.png "Distribution des lectures par taille")
 
