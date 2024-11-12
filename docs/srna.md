@@ -195,9 +195,9 @@ La première étape consiste à extraire les deux alignements que vous avez obte
 
 Pour cela, utiliser l'outil "Extract dataset" en sélectionnant les 2 fichiers d'alignement l'un après l'autre grâce à leur numéro d'index dans la collection.
 	
-![Accéder aux éléments d'une collection](img/srna/browse_collection.png "Accéder aux éléments d'une collection")
+![Extraire un élément d'une collection](img/srna/extract_dataset.png "Extraire un élément d'une collection")
 
-Puis vous utiliserez l’outil ***small_rna_maps*** sur chacun de vos fichiers d’alignement en prenant soin d’indiquer pour chacun le facteur de normalisation permettant de corriger les lectures calculés dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=243437883). 
+Puis vous utiliserez l’outil ***small_rna_maps*** sur chacun de vos fichiers d’alignement extrait en prenant soin d’indiquer pour chacun le facteur de normalisation permettant de corriger les lectures calculés dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=243437883). 
 
 ![Distribution des lectures par taille](img/srna/small_rna_maps.png "Distribution des lectures par taille")
 
