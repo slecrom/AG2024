@@ -48,20 +48,22 @@ Vous allez utiliser bowtie pour réaliser l’alignement des lectures obtenues s
 
 Ouvrez le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=871313255) dans une nouvelle fenêtre de votre navigateur. Rendez-vous dans l'onglet "Test alignement RNAseq".
 
-Indiquez votre prénom sur la ligne des paramètres de mapping que vous voulez tester.
+Vous allez lancer deux alignements sur les jeux de paramètres indiquez dans le tableau. Le premier en tant que testeur, le second en tant que relecteur.
 
 Vous allez travailler sur l'échantillon *Test Mapping* présent dans votre histoire.
 
 Vous allez utiliser l’outil ***Map with Bowtie for Illumina*** sur les données brutes de l'échantillon *Test Mapping* en alignant les lectures sur le génome de référence de la drosophile pour tester différents paramètres d'alignement.
-
-En cas de soucis d'affichage des données en entrée de l'outil Bowtie, reportez vous aux [annexes](./annexes.md#modifier-le-type-des-donnees) pour savoir comment changer le type des données.
 
 ![Alignement avec Bowtie](img/rna/bowtie1.png "Alignement avec Bowtie")
 ![Alignement avec Bowtie](img/rna/bowtie2.png "Alignement avec Bowtie")
 ![Alignement avec Bowtie](img/rna/bowtie3.png "Alignement avec Bowtie")
 ![Alignement avec Bowtie](img/rna/bowtie4.png "Alignement avec Bowtie")
 
-Une fois l'alignement effectué, indiquez le nombre, le pourcentage de lectures alignées et le temps mis par le programme à s'exécuter dans l'[onglet "Test alignement RNAseq" du tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=871313255).
+Une fois l'alignement effectué, indiquez le nombre, le pourcentage de lectures alignées et le temps mis par le programme à s'exécuter dans l'[onglet "Test alignement RNAseq" du tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=871313255) sur la ligne des paramètres dont vous avez la charge en tant que testeur. Vérifiez que vous obtenez les mêmes résultats que ceux indiqués par le testeur dans la ligne où vous êtes le relecteur.
+
+!!! note ""
+
+	Les paramètres de lancement du job sont accessibles dans Galaxy. Pour cela vous devez cliquer dans votre jeu de données sur l’icône d’information (i). La page qui s’affiche vous donne accès aux paramètres de lancement de l’outil utilisé.
 
 !!! hint "Question"
 
@@ -82,9 +84,10 @@ Maintenant que vous avez déterminé les options qui vous paraissent les plus pe
 
 Reportez le "nombre d'alignements" et vos paramètres dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=418538100).
 
-!!! hint ""
+!!! danger "Attention"
 
-	Les paramètres de lancement du job sont accessibles dans Galaxy. Pour cela vous devez cliquer dans votre jeu de données sur l’icône d’information (i). La page qui s’affiche vous donne accès aux paramètres de lancement de l’outil utilisé.
+	N'oubliez pas de cocher l'option "Save the bowtie mapping statistics to the history" pour récupérer les informations de l'alignement !
+
 
 --------------------------------------------------------------------------------
 ## Conversion des fichiers SAM
@@ -120,7 +123,19 @@ Reportez le "nombre de lectures comptées" dans le [tableau partagé](https://do
 
 Vous allez maintenant comparer les niveaux d’expression des gènes entre vos 2 conditions à l’aide des 3 réplicats de chaque condition. Pour cela vous devez d’abord récupérer les fichiers de comptage des autres échantillons qu’il vous manque.
 
-Reportez vous aux [annexes](./annexes.md#partage-de-fichiers-dans-galaxy) pour savoir comment partager des données entre serveurs Galaxy et récupérer les fichiers de comptage qu'ils vous manquent dans votre histoire.
+La liste ci-dessous peut-être importée dans votre serveur Galaxy. Attention à ne sélectionner que les lignes correspondant aux échantillons dont vous avez besoin.
+
+```
+GLKD
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_RNAseqData/download?path=%2F&files=featureCounts_GLKD_ALBA1.txt	GLKD-ALBA1-Counts
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_RNAseqData/download?path=%2F&files=featureCounts_GLKD_ALBA2.txt	GLKD-ALBA2-Counts
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_RNAseqData/download?path=%2F&files=featureCounts_GLKD_ALBA3.txt	GLKD-ALBA3-Counts
+
+WT
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_RNAseqData/download?path=%2F&files=featureCounts_WT_ALBA4.txt	WT-ALBA4-Counts
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_RNAseqData/download?path=%2F&files=featureCounts_WT_ALBA5.txt	WT-ALBA5-Counts
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_RNAseqData/download?path=%2F&files=featureCounts_WT_ALBA6.txt	WT-ALBA6-Counts
+```
 
 !!! danger "Attention"
 
@@ -130,7 +145,7 @@ Ensuite vous allez utiliser l’outil ***DESeq2*** pour effectuer l’analyse di
 
 !!! danger "Attention"
 
-	Les fichiers qui sont dans vos collections ne sont pas visibles de la même façon que ceux qui vous avez récupérés. Il faut soit rendre visible vos échantillons dans vos collections soit supprimer la collection des comptages pour les faire apparaître.
+	Les fichiers qui sont dans vos collections ne sont pas visibles de la même façon que ceux qui vous avez récupérés. Reportez vous aux [annexes](./annexes.md#extraire-des-elements-dune-collection) pour savoir comment extraire les éléments d'une collection.
 
 !!! hint ""
 
@@ -176,6 +191,11 @@ FBgn0003866
 FBgn0002626
 FBgn0037703
 ```
+
+!!! danger "Attention"
+
+	Copier bien la première ligne d'en-tête sinon le premier gène de la liste n'apparaîtra pas sur le volcano plot
+
 
 Relancez l'outil ***Volcano Plot*** avec les réglages ci-dessous.
 

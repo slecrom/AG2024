@@ -195,13 +195,11 @@ Vous allez maintenant comparer la distribution des petits ARN sur PLacZ entre le
 
 Vous allez réaliser des graphiques et quantifier la répartition des 2 types de petits ARN (siRNA et piRNA) alignés sur la séquence de PLacZ à partir des lectures de vos différents échantillons. 
 
-La première étape consiste à extraire les deux alignements que vous avez obtenus à l'étape précédente de la collection où ils se trouvent.
-
-Pour cela, utiliser l'outil "Extract dataset" en sélectionnant les 2 fichiers d'alignement l'un après l'autre grâce à leur numéro d'index dans la collection.
-	
-![Extraire un élément d'une collection](img/srna/extract_dataset.png "Extraire un élément d'une collection")
+La première étape consiste à extraire les deux alignements que vous avez obtenus à l'étape précédente de la collection où ils se trouvent. Reportez vous aux [annexes](./annexes.md#extraire-des-elements-dune-collection) pour savoir comment procéder.
 
 Puis vous utiliserez l’outil ***small_rna_maps*** sur chacun de vos fichiers d’alignement extrait en prenant soin d’indiquer pour chacun le facteur de normalisation permettant de corriger les lectures calculés dans le [tableau partagé](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=243437883). 
+
+Les facteurs de normalisation sont entrés dans l'ordre des fichiers sélectionnés.
 
 ![Distribution des lectures par taille](img/srna/small_rna_maps.png "Distribution des lectures par taille")
 

@@ -8,7 +8,7 @@ Cette section regroupe un ensemble de fichier ressources utiles pour le TP
 ### Genomic features
 
 Pour ce TP nous utiliserons la version 6.59 du génome de *Drosophila melanogaster* dont les fichiers de séquence au format fasta sont accessibles sur le [site FTP de Flybase](https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.59_FB2024_04/fasta/).
-La liste ci-dessous peut-être directement importée dans votre serveur Galaxy. 
+La liste ci-dessous peut-être importée dans votre serveur Galaxy. 
 
 ```
 https://ftp.flybase.net/genomes/Drosophila_melanogaster/dmel_r6.59_FB2024_04/fasta/dmel-all-chromosome-r6.59.fasta.gz	dmel-r6.59-fasta
@@ -25,7 +25,7 @@ https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_GenomicFeatures/download?p
 
 ### Petits ARN
 
-La liste ci-dessous peut-être directement importée dans votre serveur Galaxy. Attention à ne sélectionner uniquement que les lignes correspondant aux deux échantillons sur lesquels vous allez travailler et qui sont indiqués dans le [tableau partagé dans l'onglet "petits ARN"](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=243437883).
+La liste ci-dessous peut-être importée dans votre serveur Galaxy. Attention à ne sélectionner que les lignes correspondant aux deux échantillons sur lesquels vous allez travailler et qui sont indiqués dans le [tableau partagé dans l'onglet "petits ARN"](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=243437883).
 
 ```
 GLKD
@@ -41,7 +41,7 @@ https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?p
 
 ### ARN
 
-La liste ci-dessous peut-être directement importée dans votre serveur Galaxy. Attention à ne sélectionner uniquement que les lignes correspondant aux deux échantillons sur lesquels vous allez travailler et qui sont indiqués dans le [tableau partagé dans l'onglet "ARN"](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=418538100).
+La liste ci-dessous peut-être importée dans votre serveur Galaxy. Attention à ne sélectionner que les lignes correspondant aux deux échantillons sur lesquels vous allez travailler et qui sont indiqués dans le [tableau partagé dans l'onglet "ARN"](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=418538100).
 
 ```
 GLKD
