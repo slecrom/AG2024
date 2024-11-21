@@ -10,7 +10,7 @@
 
 	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. Elles ne sont pas la base de l’évaluation de votre travail aujourd'hui.
 
-Vous allez partir de l'histoire que vous avez créé hier où se trouve les données de séquençage des petits ARN WT et GLKD ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2023/Loading_data_in_galaxy/#5-dataset-collections)).
+Vous allez partir de l'histoire que vous avez créé hier où se trouve les données de séquençage des petits ARN WT et GLKD ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2024/Loading_data_in_galaxy/#5-dataset-collections)).
 
 Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller travailler dans le [tableau partagé accessible en ligne](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=243437883).
 
@@ -136,11 +136,11 @@ Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-histoires) po
 
 Ces filtrages sont répétitifs. Vous allez utiliser un workflow pour lancer automatiquement les 3 étapes de filtration contre les miRNA, miscRNA et tRNA. 
 
-Le workflow "sRNA clean-up" que vous allez utiliser est disponible [en cliquant ici](https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=Galaxy-Workflow-sRNA_clean-up.ga)
+Le workflow "sRNA clean-up" que vous allez utiliser est disponible [en cliquant ici](https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=Galaxy-Workflow-sRNA_clean-up_v2.ga)
 
 ![sRNA clean-up workflow](img/srna/srna_cleanup_workflow.png "sRNA clean-up workflow")
 
-Aidez-vous du tutoriel [Running a galaxy workflow](https://artbio.github.io/startbio/AnalyseGenomes_2023/Run_workflow/) que vous avez vu hier et lancez le workflow sur les données clippées.
+Aidez-vous du tutoriel [Running a galaxy workflow](https://artbio.github.io/startbio/AnalyseGenomes_2024/Run_workflow/) que vous avez vu hier et lancez le workflow sur les données clippées.
 
 !!! danger "Attention"
 

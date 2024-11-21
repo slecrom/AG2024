@@ -77,7 +77,7 @@ Pour utiliser dans votre histoire actuel un fichier situé dans un autre histoir
 --------------------------------------------------------------------------------
 ## Extraire des éléments d'une collection
 
-Pour extraire des éléments d'une collection, utilisez l'outil ***Extract dataset**** en sélectionnant les fichiers à extraire les un après les autre grâce à leur numéro d'index dans la collection.
+Pour extraire des éléments d'une collection, utilisez l'outil ***Extract dataset*** en sélectionnant les fichiers à extraire les un après les autre grâce à leur numéro d'index dans la collection.
 	
 ![Extraire un élément d'une collection](img/annexes/extract_dataset.png "Extraire un élément d'une collection")
 
