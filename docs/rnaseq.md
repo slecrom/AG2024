@@ -12,7 +12,7 @@
 
 	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. **Les réponses que vous donnerez dans votre cahier seront aussi utilisées pour l’évaluation de votre travail.**
 
-Vous allez partir de l'historique que vous avez créé où se trouve les données de séquençage des ARN WT et GLKD ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2023/Loading_data_in_galaxy/#5-dataset-collections)).
+Vous allez partir de l'historique que vous avez créé où se trouve les données de séquençage des ARN WT et GLKD ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2024/Loading_data_in_galaxy/#5-dataset-collections)).
 
 Vous pouvez retrouver les noms des deux échantillons sur lesquels vous aller travailler dans le [tableau partagé accessible en ligne](https://docs.google.com/spreadsheets/d/1aOcIwFhsY8qtf-cb1hz1NWUmFlfvU1sVO73e-tBzybs/edit?gid=418538100).
 
@@ -149,7 +149,7 @@ Ensuite vous allez utiliser l’outil ***DESeq2*** pour effectuer l’analyse di
 
 !!! hint ""
 
-	Le mieux est de créer 2 collections "featureCounts", l'une pour les échantillons WT et l'autre pour les GLKD.
+	Le mieux est de créer 2 nouvelles collections "featureCounts", l'une pour les échantillons WT et l'autre pour les GLKD.
 
 Vous devez indiquer à l’outil quels sont les échantillons à rattacher à chaque condition (facteur), puis lancer l’analyse.
 
