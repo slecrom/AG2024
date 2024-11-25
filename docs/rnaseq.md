@@ -178,23 +178,23 @@ Un [tutoriel](https://training.galaxyproject.org/training-material/topics/transc
 
 Par exemple voici comment visualiser sur le volcano plot la liste des gènes cibles des amorces que vous avez utilisés en qPCR.
 
-Comme vous l'avez fait pour [la liste des chromosomes de la drosophile](https://artbio.github.io/startbio/AnalyseGenomes_2023/Preparing_reference/#a-simplify-fasta-headers), créez la liste des noms de gènes cibles de vos amorces de qPRC dans votre historique Galaxy. Appelez la "Cibles PCR". **Indiquez "tabular" pour type de données.**
+Comme vous l'avez fait pour [la liste des chromosomes de la drosophile](https://artbio.github.io/startbio/AnalyseGenomes_2024/Preparing_reference/#a-simplify-fasta-headers), créez la liste des noms de gènes cibles de vos amorces de qPRC dans votre historique Galaxy. Appelez la "Cibles PCR". **Indiquez "tabular" pour type de données.**
 
 Voici la liste des gènes
 ```
-FlyBase ID
-FBgn0000179
-FBgn0000459
-FBgn0002522
-FBgn0026411
-FBgn0003866
-FBgn0002626
-FBgn0037703
+FlyBase ID	Gene name
+FBgn0000179	bi
+FBgn0000459	disco
+FBgn0002522	lab
+FBgn0026411	Lim1
+FBgn0003866	tsh
+FBgn0002626	Rpl32
+FBgn0037703	Kdm3
 ```
 
 !!! danger "Attention"
 
-	Copier bien la première ligne d'en-tête sinon le premier gène de la liste n'apparaîtra pas sur le volcano plot
+	Copier bien la première ligne d'en-tête sinon le premier gène de la liste n'apparaîtra pas sur le volcano plot.
 
 
 Relancez l'outil ***Volcano Plot*** avec les réglages ci-dessous.
