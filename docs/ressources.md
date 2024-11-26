@@ -105,3 +105,17 @@ Fichiers des séquences des 142 piRNA clusters
 https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_GenomicFeatures/download?path=%2F&files=Dmel_piRNA_clusters.fa.gz piRNA-clusters
 ```
 
+--------------------------------------------------------------------------------
+## piRNA uniques
+
+Fichiers BAM obtenus après alignement des piRNA sur le génome de la drosophile pour obtenir des piRNA uniques. [Voir le tutoriel sur les petits ARN](/srna/#conserver-les-pirna-uniques)
+
+```
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=piRNAu_GLKD-ALBA28.bam	GLKD-ALBA28-piRNAu
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=piRNAu_GLKD-ALBA29.bam	GLKD-ALBA29-piRNAu
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=piRNAu_GLKD-ALBA30.bam	GLKD-ALBA30-piRNAu
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=piRNAu_WT-ALBA25.bam	WT-ALBA25-piRNAu
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=piRNAu_WT-ALBA26.bam	WT-ALBA26-piRNAu
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=piRNAu_WT-ALBA27.bam	WT-ALBA27-piRNAu
+```
+

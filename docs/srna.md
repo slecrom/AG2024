@@ -136,7 +136,7 @@ Reportez vous aux [annexes](./annexes.md#copier-des-fichiers-entre-histoires) po
 
 Ces filtrages sont répétitifs. Vous allez utiliser un workflow pour lancer automatiquement les 3 étapes de filtration contre les miRNA, miscRNA et tRNA. 
 
-Le workflow "sRNA clean-up" que vous allez utiliser est disponible [en cliquant ici](https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=Galaxy-Workflow-sRNA_clean-up_v2.ga)
+Le workflow "sRNA clean-up v2" que vous allez utiliser est disponible [en cliquant ici](https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=Galaxy-Workflow-sRNA_clean-up_v2.ga)
 
 ![sRNA clean-up workflow](img/srna/srna_cleanup_workflow.png "sRNA clean-up workflow")
 
