@@ -126,4 +126,34 @@ Sélectionnez "Export URL from another Galaxy instance" puis collez l'URL de l'h
 
 Une fois importé, pensez à le renommer pour lui donner un nom plus explicite.
 
+--------------------------------------------------------------------------------
+## Sauvegarde d'une machine virtuelle
+
+### Création d'un instantané
+
+Vous pouvez créer un instantané pour sauvegarder votre disque à des étapes importantes en cas de problème. Par exemple une fois toutes les données chargées et préparées avant de démarrer la semaine de TP.
+
+- Allez dans l'application "Instances de VM", cliquer sur le nom de la VM
+- Dans la section "Stockage" cliquez sur le nom du disque de démarrage
+- Puis cliquez sur "Créer un instantané" dans la barre de menu du haut
+- Pramètres
+	- Nom : ansible-galaxy-4-startup2
+	- Description : Sauvegarde de la VM de démarrage du TP AG2024 avec toutes les données chargées et le génome de référence préparé
+	- Type de source de l'instantané : Disque
+	- Disque source : ansible-galaxy-4
+	- Type : instantané
+	- Emplacement : Régional - europe-north1
+
+![Création d'un instantané](img/annexes/snapshot_creation.png "Création d'un instantané")
+
+Vous pouvez obtenir plus d'information en consultant la documentation [Créer des instantanés de disque](https://cloud.google.com/compute/docs/disks/create-snapshots?hl=fr)
+
+### Utilisation d'un instantané
+
+En cas de problème avec votre VM vous pouvez repartir d'une sauvegarde sans être obligé de tout réinstaller.
+
+- La première étape consiste à créer une VM comme vous l'avez déjà fait en suivant [le tutoriel StartBio](https://artbio.github.io/startbio/AnalyseGenomes_2024/bare-galaxy-google/)
+- Puis dans disque de démarrage cliquer sur "Modifier" et dans l'onglet "Instantanés" choisir celui que vous avez créé
+
+![Utilisation d'un instantané](img/annexes/snapshot_utilisation.png "Utilisation d'un instantané")
 
