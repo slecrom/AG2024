@@ -185,7 +185,7 @@ Par exemple voici comment visualiser sur le volcano plot la liste des gènes cib
 
 Comme vous l'avez fait pour [la liste des chromosomes de la drosophile](https://artbio.github.io/startbio/AnalyseGenomes_2024/Preparing_reference/#a-simplify-fasta-headers), créez la liste des noms de gènes cibles de vos amorces de qPRC dans votre historique Galaxy. Appelez la "Cibles PCR". **Indiquez "tabular" pour type de données.**
 
-Voici la liste des gènes
+Voici la liste des gènes à importer :
 ```
 FlyBase ID	Gene name
 FBgn0000179	bi
@@ -196,6 +196,18 @@ FBgn0003866	tsh
 FBgn0002626	Rpl32
 FBgn0037703	Kdm3
 ```
+
+Pour information, voici la liste des noms de gènes associés aux Gene ID que vous avez chargé dans votre histoire :
+
+| FlyBase ID | Gene name |
+| :--------------- |:---------------:|
+| FBgn0000179 | bi |
+| FBgn0000459 | disco |
+| FBgn0002522 | lab |
+| FBgn0026411 | Lim1 |
+| FBgn0003866 | tsh |
+| FBgn0002626 | Rpl32 |
+| FBgn0037703 | Kdm3  |
 
 !!! danger "Attention"
 
