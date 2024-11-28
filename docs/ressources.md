@@ -119,3 +119,12 @@ https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?p
 https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_smallRNAseqData/download?path=%2F&files=piRNAu_WT-ALBA27.bam	WT-ALBA27-piRNAu
 ```
 
+--------------------------------------------------------------------------------
+## miRNA modifié contre Kdm3
+
+La séquences ci-dessous correspond au miRNA modifié contre Kdm3, si par exemple, vous voulez savoir ou le miRNA contre Kdm3 agit.
+
+```
+CAGTTCAGTTAGCGACGTTTA
+TAAACGTCGCTAACTGAACTG
+```

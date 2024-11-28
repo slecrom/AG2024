@@ -10,7 +10,8 @@
 
 !!! hint ""
 
-	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats. **Les réponses que vous donnerez dans votre cahier seront aussi utilisées pour l’évaluation de votre travail.**
+	Les questions posées tout au long de cette page sont là pour vous guider dans votre analyse, pour vous aider à comprendre ce que vous faites et ainsi mieux appréhender vos résultats.
+	**Les réponses que vous donnerez dans votre cahier seront aussi utilisées pour l’évaluation de votre travail. Pensez également à bien jusitifier les choix que vous faites.**
 
 Vous allez partir de l'historique que vous avez créé où se trouve les données de séquençage des ARN WT et GLKD ([voir le tutoriel](https://artbio.github.io/startbio/AnalyseGenomes_2024/Loading_data_in_galaxy/#5-dataset-collections)).
 
@@ -163,6 +164,10 @@ Vous devez indiquer à l’outil quels sont les échantillons à rattacher à ch
 !!! hint ""
 
 	Si vous avez envie d'aller plus loin avec la visualisation des données sur le MA-plot, l'[outil ggmaplot](https://rpkgs.datanovia.com/ggpubr/reference/ggmaplot.html) permet dans R d'afficher des annotations sur la graphique.
+
+!!! note "Estimation de la dispersion dans DESeq2"
+
+	Si vous avez envie de mieux comprendre comment DESeq2 estime la dispersion pour mesurer la différence d'expression, [cette vidéo détaille le processus](https://campus.datacamp.com/courses/rna-seq-with-bioconductor-in-r/differential-expression-analysis-with-deseq2?ex=3).
 
 
 ### Visualisation sous forme de volcano plot
