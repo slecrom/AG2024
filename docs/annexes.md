@@ -152,8 +152,9 @@ Vous pouvez obtenir plus d'information en consultant la documentation [Créer de
 
 En cas de problème avec votre VM vous pouvez repartir d'une sauvegarde sans être obligé de tout réinstaller.
 
-- La première étape consiste à créer une VM comme vous l'avez déjà fait en suivant [le tutoriel StartBio](https://artbio.github.io/startbio/AnalyseGenomes_2024/bare-galaxy-google/)
-- Puis dans disque de démarrage cliquer sur "Modifier" et dans l'onglet "Instantanés" choisir celui que vous avez créé
+- La première étape consiste à créer une VM comme vous l'avez déjà fait en suivant [le tutoriel StartBio](https://artbio.github.io/startbio/AnalyseGenomes_2024/bare-galaxy-google/).
+- Puis dans disque de démarrage cliquer sur "Modifier" et dans l'onglet "Instantanés" choisir celui que vous avez créé.
+- Vous avez la possibilité d'augmenter la taille du disque si vous souhaitez obtenir plus d'espace sur votre VM.
 
 ![Utilisation d'un instantané](img/annexes/snapshot_utilisation.png "Utilisation d'un instantané")
 
