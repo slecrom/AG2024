@@ -187,14 +187,14 @@ Comme vous l'avez fait pour [la liste des chromosomes de la drosophile](https://
 
 Voici la liste des gènes à importer :
 ```
-FlyBase ID	Gene name
-FBgn0000179	bi
-FBgn0000459	disco
-FBgn0002522	lab
-FBgn0026411	Lim1
-FBgn0003866	tsh
-FBgn0002626	Rpl32
-FBgn0037703	Kdm3
+FlyBase ID
+FBgn0000179
+FBgn0000459
+FBgn0002522
+FBgn0026411
+FBgn0003866
+FBgn0002626
+FBgn0037703
 ```
 
 Pour information, voici la liste des noms de gènes associés aux Gene ID que vous avez chargé dans votre histoire :
