@@ -6,10 +6,15 @@
 	
 La documentation d'Integrative Genomics Viewer (IGV) est [accessible en ligne](https://software.broadinstitute.org/software/igv/).
 
+Vous allez utiliser la version 2.16.2 d'IGV que vous allez télécharger dans le [répertoire des archives](https://data.broadinstitute.org/igv/projects/downloads/2.16/).
+
+Décompressez l'archive `unzip IGV_2.16.2.zip`, déplacez vous dans le répertoire que vous venez de créer et lancer IGV à l'aide de la commande `./igv.sh`.
+
+<!--
 IGV se lance en ouvrant un terminal et en indiquant le chemin vers le logiciel :
 
 `/Formation_AdG/IGV_2.18.4/igv.sh`
-
+-->
 
 --------------------------------------------------------------------------------
 ## Récupérez vos données depuis le serveur Galaxy
