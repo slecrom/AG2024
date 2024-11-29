@@ -80,6 +80,8 @@ https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&
 https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_ChIPseq/download?path=%2F&files=ChIPseq_Rhino_Kdm3GLKD.bigwig
 ```
 
+Les données originales sont accessibles dans l'archive tar bigwig "GSE203279_RAW.tar" sur l'[entrepôt de données GEO](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE203279) en cliquant sur "custom".
+
 
 --------------------------------------------------------------------------------
 ## Locus de piRNA
