@@ -28,8 +28,8 @@ Vous allez utiliser IGV en local dans votre VM sur les machines de la salle du c
 
 Les fichiers à télécharger sont les suivants :
 
-- Le génome de la *drosophile* au format fasta : dmel-MAIN-chromosome-r6.54.fasta
-- Le fichier d'annotation au format gtf : dmel-r6.54-gtf
+- Le génome de la *drosophile* au format fasta : dmel-MAIN-chromosome-r6.59.fasta
+- Le fichier d'annotation au format gtf : dmel-r6.59-gtf
 - Les fichiers bam filtrés, triés et leurs index des fichiers GLKD et WT que vous avez analysés, exemple : ALBA4.bam, ALBA4.bai, ALBA1.bam, ALBA1.bai
 
 !!! danger "Attention"
