@@ -130,3 +130,13 @@ La séquences ci-dessous correspond au miRNA modifié contre Kdm3, si par exempl
 CAGTTCAGTTAGCGACGTTTA
 TAAACGTCGCTAACTGAACTG
 ```
+
+--------------------------------------------------------------------------------
+## Lectures longues
+
+Lectures au format fasta et contigs au format fasta suite au séquençage des ovaires de drosophiles avec le protocole Ultra Long Reds de Nanopore.
+
+```
+https://psilo.sorbonne-universite.fr/index.php/s/Kdm3_RNAseqData/download?path=%2F&files=UltraLongDrosoOvaires.tar	Ovaires-Nanopore
+
+```
